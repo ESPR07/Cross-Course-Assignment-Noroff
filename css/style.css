@@ -28,7 +28,9 @@ body {
   margin: 0;
 }
 
-/*Nav bar section*/
+/*==============
+Nav Bar Styling
+================*/
 
 .nav-container {
   background-color: var(--navBackground);
@@ -78,6 +80,8 @@ body {
   margin-right: 10px;
 }
 
+/*Nav Bar Hover Styles */
+
 #nav-logo:hover {
   cursor: pointer;
 }
@@ -102,7 +106,9 @@ body {
   width: 100%;
 }
 
-/*Home page button*/
+/*===================
+Home page Shop Button
+=====================*/
 
 .main-button {
   background-color: rgba(255, 255, 255, 0.6);
