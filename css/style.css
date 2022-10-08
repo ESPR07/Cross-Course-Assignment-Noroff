@@ -79,6 +79,7 @@ Nav Bar Styling
 }
 
 #nav-about-us {
+  white-space: nowrap;
 }
 
 #nav-cart {
