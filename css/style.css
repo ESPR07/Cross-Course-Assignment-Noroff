@@ -53,13 +53,13 @@ Nav Bar Styling
   width: 100%;
   top: 0px;
   bottom: 0px;
-  overflow-y: scroll;
   box-shadow: inset 0px 8px 10px 0px rgba(0, 0, 0, 0.6);
   z-index: 100;
 }
 
 #nav-logo {
   height: 70px;
+  margin-left: 20px;
 }
 
 #nav-collection {
@@ -82,7 +82,7 @@ Nav Bar Styling
 }
 
 #nav-cart {
-  margin-right: 10px;
+  margin-right: 50px;
 }
 
 /*Nav Bar Hover Styles with focus attributes for tab'ing */
