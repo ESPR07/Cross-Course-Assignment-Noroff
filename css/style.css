@@ -211,9 +211,8 @@ ul {
 
   .home-background {
     position: fixed;
-    object-fit: none;
-    object-position: center;
-    height: 1175px;
+    background-position: top;
+    background-size: cover;
     z-index: 0;
   }
 
