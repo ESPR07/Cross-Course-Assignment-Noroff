@@ -34,13 +34,6 @@ body {
 Nav Bar Styling
 ================*/
 
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin-inline: 10%;
-}
-
 .nav-container {
   background-color: var(--navBackground);
   color: var(--textColor);
@@ -57,6 +50,13 @@ ul {
   bottom: 0px;
   box-shadow: inset 0px 8px 10px 0px rgba(0, 0, 0, 0.6);
   z-index: 100;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 10%;
 }
 
 #nav-logo {
@@ -113,12 +113,12 @@ form .search-icon {
 
 /*Nav Bar Hover Styles with focus attributes for tab'ing */
 
+#nav-logo:hover,
+#nav-logo:focus,
 #nav-collection:hover,
 #nav-collection:focus,
 #nav-about-us:hover,
 #nav-about-us:focus,
-#nav-logo:hover,
-#nav-logo:focus,
 #nav-contact:hover,
 #nav-contact:focus,
 #nav-cart:hover,
@@ -183,7 +183,7 @@ form .search-icon {
   font-size: 1.5vw;
 }
 
-/*Home Page Hover/Focus States*/
+/*Home Page Shop Now Hover/Focus States*/
 
 .main-button:hover,
 .main-button:focus {
