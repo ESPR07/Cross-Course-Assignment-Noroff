@@ -45,13 +45,13 @@ ul {
   background-color: var(--navBackground);
   color: var(--textColor);
   font-family: "manrope", Verdana, Tahoma, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  height: 70px;
+  height: 100px;
   width: 100%;
   top: 0px;
   bottom: 0px;
@@ -60,15 +60,12 @@ ul {
 }
 
 #nav-logo {
-  height: 70px;
+  height: 100px;
   margin-left: 20px;
 }
 
 #nav-logo-mobile {
   display: none;
-}
-
-#nav-collection {
 }
 
 form {
@@ -106,11 +103,11 @@ form .search-icon {
 }
 
 #nav-contact {
-  width: 70px;
+  width: 60px;
 }
 
 #nav-cart {
-  width: 55px;
+  width: 45px;
   margin-right: 50px;
 }
 
@@ -142,7 +139,8 @@ form .search-icon {
 /*Home Background*/
 
 .home-background {
-  object-fit: contain;
+  position: fixed;
+  object-fit: cover;
   object-position: center;
   width: 100%;
   height: 100%;
@@ -212,6 +210,7 @@ ul {
   }
 
   .home-background {
+    position: fixed;
     object-fit: none;
     object-position: center;
     height: 1175px;
@@ -290,7 +289,7 @@ ul {
     width: 100%;
     display: flex;
     align-items: center;
-    top: 8.5%;
+    top: 17vw;
     transition: 200ms;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
@@ -301,17 +300,18 @@ ul {
   }
 
   #main-button-head {
-    font-size: 6vw;
+    padding-top: 20px;
+    font-size: 7vw;
     margin: 0;
   }
 
   #main-button-sub {
-    font-size: 2.4vw;
+    font-size: 4vw;
     margin-right: 100px;
   }
 
   #main-button-shop {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 
   /*Mobile Footer Styling*/
