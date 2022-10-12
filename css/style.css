@@ -11,6 +11,9 @@
   --buyNowActive: #0a3641;
   --checkoutButton: #8c4300;
   --orderNumber: #ca0000;
+  --browseBackground: #e3e3e3;
+  --productImage: #eeeeee;
+  --productColorText: #a5a5a5;
 }
 
 ::placeholder {
@@ -149,7 +152,7 @@ form .search-icon {
 
 /*Home Page Shop Now Button*/
 
-.main-button {
+.home-shop-now-button {
   background-color: rgba(255, 255, 255, 0.6);
   color: var(--textColor);
   font-family: "manrope", Verdana, Tahoma, sans-serif;
@@ -165,34 +168,123 @@ form .search-icon {
   z-index: 10;
 }
 
-.main-button-text {
+.home-shop-now-text {
   padding: 10px;
 }
 
-#main-button-head {
+#home-shop-now-head {
   font-size: 3vw;
   margin: 0;
 }
 
-#main-button-sub {
+#home-shop-now-sub {
   font-size: 1.2vw;
   margin-right: 100px;
 }
 
-#main-button-shop {
+#home-shop-now {
   font-size: 1.5vw;
 }
 
 /*Home Page Shop Now Hover/Focus States*/
 
-.main-button:hover,
-.main-button:focus {
+.home-shop-now-button:hover,
+.home-shop-now-button:focus {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 1);
 }
 
 ul {
   display: none;
+}
+
+/*===================
+      Browse Page
+=====================*/
+
+/*Browse Global Values */
+
+.browse-background {
+  border: 2px solid black;
+  background-color: var(--browseBackground);
+  margin-top: 72px;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.browse-container {
+  border: 2px solid black;
+  background-color: var(--browseBackground);
+  margin-inline: 10%;
+  margin-block: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.browse-container h1 {
+  color: var(--textColor);
+  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-size: 2em;
+  text-align: left;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.browse-container p {
+  color: var(--productColorText);
+  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-size: 1.3em;
+  text-align: left;
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.browse-container h2 {
+  color: var(--textColor);
+  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-size: 2em;
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.browse-cart-icon {
+  width: 70%;
+}
+
+/*Individual Browse Products*/
+
+.browse-product-1 {
+  border: 2px solid black;
+  background-color: white;
+  margin: 10px;
+}
+.browse-product-image {
+  background-color: var(--productImage);
+  width: 100%;
+}
+
+.browse-product-image img {
+  width: 60%;
+}
+
+.browse-product-2 {
+  border: 2px solid black;
+  background-color: white;
+  margin: 10px;
+}
+
+.browse-product-3 {
+  border: 2px solid black;
+  background-color: white;
+  margin: 10px;
 }
 
 /*==============
@@ -273,7 +365,7 @@ ul {
 
   /*Mobile Main Button Styling*/
 
-  .main-button {
+  .home-shop-now-button {
     background-color: rgba(255, 255, 255, 0.8);
     color: var(--textColor);
     font-family: "manrope", Verdana, Tahoma, sans-serif;
@@ -287,22 +379,22 @@ ul {
     z-index: 10;
   }
 
-  .main-button-text {
+  .home-shop-now-text {
     padding: 10px;
   }
 
-  #main-button-head {
+  #home-shop-now-head {
     padding-top: 20px;
     font-size: 7vw;
     margin: 0;
   }
 
-  #main-button-sub {
+  #home-shop-now-sub {
     font-size: 4vw;
     margin-right: 100px;
   }
 
-  #main-button-shop {
+  #home-shop-now-shop {
     font-size: 5vw;
   }
 
