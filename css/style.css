@@ -207,7 +207,6 @@ ul {
 .browse-background {
   background-color: var(--browseBackground);
   margin-top: 72px;
-  padding-block: 10px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -311,6 +310,10 @@ ul {
   ==============*/
 
 @media (max-width: 900px) {
+  /*===========================
+      Nav and Footer Sections
+===============================*/
+
   header {
     background-color: var(--navBackground);
     position: fixed;
@@ -382,6 +385,42 @@ ul {
     padding: 0;
   }
 
+  /*Mobile Footer Styling*/
+
+  .footer-icons {
+    background-color: var(--navBackground);
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 10%;
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.6);
+  }
+
+  ul {
+    margin: 0;
+    margin-inline: 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-cart-icon {
+    width: 55px;
+    height: auto;
+  }
+
+  .mobile-contact-icon {
+    width: 70px;
+  }
+
+  /*===================
+      Home Page
+=====================*/
+
   /*Mobile Main Button Styling*/
 
   .home-shop-now-button {
@@ -417,35 +456,19 @@ ul {
     font-size: 5vw;
   }
 
-  /*Mobile Footer Styling*/
+  /*===================
+      Browse Page
+=====================*/
+.browse-container {
+grid-template-columns: 1fr;
+grid-template-rows: repeat(6, 1fr);
+margin-inline: 5%;
+}
 
-  .footer-icons {
-    background-color: var(--navBackground);
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: 10%;
-    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.6);
-  }
-
-  ul {
-    margin: 0;
-    margin-inline: 20px;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .mobile-cart-icon {
-    width: 55px;
-    height: auto;
-  }
-
-  .mobile-contact-icon {
-    width: 70px;
-  }
+.browse-ad-image {
+  width: 100%;
+  height: 100px;
+  margin-left: 0;
+  font-size: 1em;
+  align-items: center;
 }
