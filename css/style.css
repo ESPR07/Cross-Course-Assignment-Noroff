@@ -16,6 +16,10 @@
   --productColorText: #a5a5a5;
 }
 
+/*==============
+Global Values
+================*/
+
 ::placeholder {
   color: var(--textColor);
   opacity: 0.5;
@@ -362,15 +366,7 @@ ul {
     box-shadow: none;
   }
 
-  #nav-logo {
-    display: none;
-  }
-
-  #nav-contact {
-    display: none;
-  }
-
-  #nav-cart {
+  #nav-logo, #nav-cart, #nav-contact {
     display: none;
   }
 
@@ -421,7 +417,7 @@ ul {
   }
 
   /*===================
-      Home Page
+      Mobile Home Page
 =====================*/
 
   /*Mobile Main Button Styling*/
@@ -460,7 +456,7 @@ ul {
   }
 
   /*===================
-      Browse Page
+      Mobile Browse Page
 =====================*/
 
 .browse-background {
