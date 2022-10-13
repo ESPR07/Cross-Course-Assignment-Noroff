@@ -202,31 +202,40 @@ ul {
       Browse Page
 =====================*/
 
-/*Browse Global Values */
+/*Browse Page Global Values */
 
 .browse-background {
   border: 2px solid black;
   background-color: var(--browseBackground);
   margin-top: 72px;
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
 }
 
+/*Product Grid Styling*/
+
 .browse-container {
   border: 2px solid black;
   background-color: var(--browseBackground);
-  margin-inline: 10%;
+  margin-inline: 15%;
   margin-block: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.browse-product {
+  background-color: white;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .browse-container h1 {
   color: var(--textColor);
   font-family: "manrope", Verdana, Tahoma, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: left;
   margin-bottom: 0;
   margin-left: 10px;
@@ -235,7 +244,7 @@ ul {
 .browse-container p {
   color: var(--productColorText);
   font-family: "manrope", Verdana, Tahoma, sans-serif;
-  font-size: 1.3em;
+  font-size: 1em;
   text-align: left;
   margin-top: 0;
   margin-left: 10px;
@@ -244,7 +253,7 @@ ul {
 .browse-container h2 {
   color: var(--textColor);
   font-family: "manrope", Verdana, Tahoma, sans-serif;
-  font-size: 2em;
+  font-size: 1.3em;
   text-align: left;
   margin-top: 10%;
   margin-left: 10px;
@@ -255,38 +264,28 @@ ul {
   justify-content: space-between;
 }
 
-.browse-cart-icon {
-  width: 70%;
-}
-
-/*Individual Browse Products*/
-
-.browse-product-1 {
-  border: 2px solid black;
-  background-color: white;
-  margin: 10px;
-}
-
 .browse-product-image {
-  border: 2px solid black;
   background-color: var(--productImage);
   width: 100%;
+  height: 300px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .browse-product-image img {
-  width: 60%;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.browse-product-2 {
-  border: 2px solid black;
-  background-color: white;
-  margin: 10px;
-}
-
-.browse-product-3 {
-  border: 2px solid black;
-  background-color: white;
-  margin: 10px;
+.browse-cart-icon {
+  background-image: url(/images/cart-icon.jpg);
+  background-size: 50px;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 /*==============
