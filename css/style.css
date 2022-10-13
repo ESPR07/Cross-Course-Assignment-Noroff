@@ -16,8 +16,29 @@
   --productColorText: #a5a5a5;
 }
 
+/*======================================================================
+========================================================================
+Table of Content:
+
+1. Global Values
+
+2. Nav Bar Styling
+  2.1 Nav Bar Hover Styles with focus attributes for tab'ing
+
+3. Home Page
+  3.1 Home Background
+  3.2 Home Page Shop Now Button
+  3.3 Home Page Shop Now Hover/Focus States
+  
+4. Browse Page
+  4.1 Browse Page Global Values
+  4.2 Styling for the ad banner on top of the page
+  4.3 Product Grid Styling
+========================================================================
+========================================================================*/
+
 /*==============
-Global Values
+1. Global Values
 ================*/
 
 ::placeholder {
@@ -118,7 +139,7 @@ form .search-icon {
   margin-right: 50px;
 }
 
-/*Nav Bar Hover Styles with focus attributes for tab'ing */
+/* 2.1 Nav Bar Hover Styles with focus attributes for tab'ing */
 
 #nav-logo:hover,
 #nav-logo:focus,
@@ -140,10 +161,10 @@ form .search-icon {
 }
 
 /*===================
-      Home Page
+      3. Home Page
 =====================*/
 
-/*Home Background*/
+/*3.1 Home Background*/
 
 .home-background {
   position: fixed;
@@ -154,7 +175,7 @@ form .search-icon {
   z-index: 0;
 }
 
-/*Home Page Shop Now Button*/
+/*3.2 Home Page Shop Now Button*/
 
 .home-shop-now-button {
   background-color: rgba(255, 255, 255, 0.6);
@@ -190,7 +211,7 @@ form .search-icon {
   font-size: 1.5vw;
 }
 
-/*Home Page Shop Now Hover/Focus States*/
+/*3.3 Home Page Shop Now Hover/Focus States*/
 
 .home-shop-now-button:hover,
 .home-shop-now-button:focus {
@@ -203,10 +224,10 @@ ul {
 }
 
 /*===================
-      Browse Page
+      4. Browse Page
 =====================*/
 
-/*Browse Page Global Values */
+/*4.1 Browse Page Global Values */
 
 .browse-background {
   background-color: var(--browseBackground);
@@ -219,7 +240,7 @@ ul {
   text-align: center;
 }
 
-/*Styling for the ad banner on top of the page*/
+/*4.2 Styling for the ad banner on top of the page*/
 
 .browse-ad-image {
   background-image: url(/images/ad-banner.jpg);
@@ -238,7 +259,7 @@ ul {
   text-shadow: 1px 1px 2px black;
 }
 
-/*Product Grid Styling*/
+/*4.3 Product Grid Styling*/
 
 .browse-container {
   background-color: var(--browseBackground);
