@@ -107,7 +107,7 @@ ul {
 
 form {
   display: flex;
-  width: 50%;
+  width: 40%;
 }
 
 form .nav-search {
@@ -150,8 +150,6 @@ form .search-icon {
 
 /* 2.1 Nav Bar Hover Styles with focus attributes for tab'ing */
 
-#nav-logo:hover,
-#nav-logo:focus,
 #nav-collection:hover,
 #nav-collection:focus,
 #nav-about-us:hover,
