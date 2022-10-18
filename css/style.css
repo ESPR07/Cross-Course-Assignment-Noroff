@@ -45,9 +45,26 @@ Desktop
   4.2 Styling for the ad banner on top of the page
   4.3 Product Grid Styling
 
+5. About Us Page
+
+6. Contact Page
+
 ======
 Mobile
 ======
+
+m1. Nav and Footer Sections
+  m1.1 Mobile Nav Styling
+  m1.2 Mobile Footer Styling
+
+m2. Mobile Home Page
+  m2.1 Mobile Main Button Styling
+
+m3. Mobile Browse Page
+
+m4. Mobile About Us Page
+
+m5. Mobile Contact Page
 
 ========================================================================
 ========================================================================*/
@@ -346,7 +363,7 @@ ul {
 }
 
 /*=====================
-      4. About Us Page
+      5. About Us Page
 =======================*/
 
 .about-us-overlay {
@@ -366,11 +383,11 @@ ul {
 .about-us-overlay p {
   margin-inline: 15vw;
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 900;
 }
 
 /*=====================
-      5. Contact Page
+      6. Contact Page
 =======================*/
 
 .contact-overlay {
@@ -413,7 +430,7 @@ ul {
   height: 25px;
   border-radius: 7px;
   font-size: 1em;
-  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  font-weight: 900;
 }
 
 .message-form {
@@ -425,11 +442,11 @@ ul {
   height: 100px;
   border-radius: 7px;
   font-size: 1em;
-  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  font-weight: 900;
 }
 
 .contact-submit-button {
-  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  font-weight: 900;
   color: var(--backgrounColor);
   background-color: var(--checkoutButton);
   font-size: 1.3em;
@@ -450,9 +467,9 @@ ul {
   ==============*/
 
 @media (max-width: 900px) {
-  /*===========================
-      Nav and Footer Sections
-===============================*/
+  /*==============================
+      m1. Nav and Footer Sections
+==================================*/
 
   header {
     background-color: var(--navBackground);
@@ -463,7 +480,7 @@ ul {
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
   }
 
-  /*Mobile Nav Styling*/
+  /* m1.1 Mobile Nav Styling*/
 
   #burger-menu {
     right: 0px;
@@ -519,7 +536,7 @@ ul {
     padding: 0;
   }
 
-  /*Mobile Footer Styling*/
+  /* m1.2 Mobile Footer Styling*/
 
   .footer-icons {
     background-color: var(--navBackground);
@@ -551,11 +568,11 @@ ul {
     width: 70px;
   }
 
-  /*===================
-      Mobile Home Page
-=======================*/
+  /*=======================
+      m2. Mobile Home Page
+===========================*/
 
-  /*Mobile Main Button Styling*/
+  /*m2.1 Mobile Main Button Styling*/
 
   .home-shop-now-button {
     background-color: rgba(255, 255, 255, 0.8);
@@ -591,9 +608,9 @@ ul {
     font-size: 5vw;
   }
 
-  /*====================
-      Mobile Browse Page
-========================*/
+  /*=========================
+      m3. Mobile Browse Page
+=============================*/
 
   .browse-background {
     padding: 0;
@@ -619,7 +636,7 @@ ul {
   }
 
   /*==========================
-      Mobile About Us Page
+      m4. Mobile About Us Page
 ==============================*/
 
   .about-us-overlay {
@@ -638,7 +655,7 @@ ul {
   }
 
   /*=========================
-      Mobile Contact Page
+      m5. Mobile Contact Page
 =============================*/
 
   .contact-info {
