@@ -3,6 +3,11 @@
   src: url(./font/Manrope-VariableFont_wght.ttf);
 }
 
+@font-face {
+  font-family: "manrope-bold";
+  src: url(./font/Manrope-ExtraBold.ttf);
+}
+
 :root {
   --textColor: #0a3641;
   --navBackground: #f8f8f8;
@@ -53,7 +58,7 @@ Mobile
 ::placeholder {
   color: var(--textColor);
   opacity: 0.5;
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
 }
 
 a:link,
@@ -76,7 +81,7 @@ Nav Bar Styling
 .nav-container {
   background-color: var(--navBackground);
   color: var(--textColor);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   font-size: 1.5em;
   padding: 10px;
   display: flex;
@@ -122,7 +127,7 @@ form .nav-search {
   height: 25px;
   border-radius: 15px;
   font-size: 1em;
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
 }
 
 form .search-icon {
@@ -189,7 +194,7 @@ form .search-icon {
 .home-shop-now-button {
   background-color: rgba(255, 255, 255, 0.6);
   color: var(--textColor);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   height: 20vw;
   width: 30vw;
   display: flex;
@@ -256,7 +261,7 @@ ul {
   background-position: top 30% left 0;
   background-size: cover;
   color: var(--productImage);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   font-size: 3.5em;
   margin-inline: 15%;
   display: flex;
@@ -288,7 +293,6 @@ ul {
 
 .browse-container h1 {
   color: var(--textColor);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
   font-size: 1.5em;
   text-align: left;
   margin-bottom: 0;
@@ -297,7 +301,6 @@ ul {
 
 .browse-container p {
   color: var(--productColorText);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
   font-size: 1em;
   text-align: left;
   margin-top: 0;
@@ -306,7 +309,6 @@ ul {
 
 .browse-container h2 {
   color: var(--textColor);
-  font-family: "manrope", Verdana, Tahoma, sans-serif;
   font-size: 1.3em;
   text-align: left;
   margin-top: 10%;
@@ -480,7 +482,7 @@ ul {
   .home-shop-now-button {
     background-color: rgba(255, 255, 255, 0.8);
     color: var(--textColor);
-    font-family: "manrope", Verdana, Tahoma, sans-serif;
+    font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
     height: 40vw;
     width: 100%;
     display: flex;
