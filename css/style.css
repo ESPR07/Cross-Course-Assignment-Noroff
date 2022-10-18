@@ -15,6 +15,7 @@
   --buynowInactive: #d9d9d9;
   --buyNowActive: #0a3641;
   --checkoutButton: #8c4300;
+  --checkoutButtonInactive: #ffffff;
   --orderNumber: #ca0000;
   --browseBackground: #e3e3e3;
   --productImage: #eeeeee;
@@ -350,6 +351,7 @@ ul {
 
 .about-us-overlay {
   background-color: rgba(10, 54, 65, 0.6);
+  color: var(--browseBackground);
   position: relative;
   height: 60vh;
   margin-top: 70px;
@@ -363,10 +365,86 @@ ul {
 
 .about-us-overlay p {
   margin-inline: 10vw;
-  color: var(--browseBackground);
   font-size: 2em;
   font-weight: 400;
 }
+
+/*=====================
+      5. Contact Page
+=======================*/
+
+.contact-overlay {
+  background-color: rgba(10, 54, 65, 0.6);
+  color: var(--browseBackground);
+  position: relative;
+  height: 60vh;
+  margin-top: 70px;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+}
+
+.contact-phone {
+  font-size: 2em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact-form label {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.contact-text {
+  background-color: var(--searchbarColor);
+  border: none;
+  color: var(--textColor);
+  left: 5%;
+  width: 30vw;
+  height: 25px;
+  border-radius: 7px;
+  font-size: 1em;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+}
+
+.message-form {
+  background-color: var(--searchbarColor);
+  border: none;
+  color: var(--textColor);
+  left: 5%;
+  width: 30vw;
+  height: 100px;
+  border-radius: 7px;
+  font-size: 1em;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+}
+
+.contact-submit-button {
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  color: var(--backgrounColor);
+  background-color: var(--checkoutButton);
+  font-size: 1.3em;
+  margin-top: 20px;
+  height: 40px;
+  width: 30vw;
+  border: none;
+}
+
+.contact-submit-button:hover {
+  background-color: var(--checkoutButtonInactive);
+  color: var(--textColor);
+  cursor: pointer;
+}
+
 /*==============
   Mobile Version
   ==============*/
@@ -540,9 +618,9 @@ ul {
     font-size: 1.2em;
   }
 
-  /*=====================
-      4. About Us Page
-=======================*/
+  /*==========================
+      Mobile About Us Page
+==============================*/
 
   .about-us-overlay {
     height: 40vh;
@@ -557,5 +635,33 @@ ul {
 
   .about-us-logo {
     display: none;
+  }
+
+  /*=========================
+      Mobile Contact Page
+=============================*/
+
+  .contact-info {
+    display: block;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-text,
+  .message-form,
+  .contact-submit-button {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .contact-form label {
+    margin-left: 10px;
+  }
+
+  .contact-overlay {
+    height: 100%;
+    padding-bottom: 100px;
   }
 }
