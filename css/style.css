@@ -19,6 +19,7 @@
   --orderNumber: #ca0000;
   --browseBackground: #e3e3e3;
   --productImage: #eeeeee;
+  --adBannerText: #ffffff;
   --productColorText: #727272;
 }
 
@@ -278,7 +279,7 @@ ul {
   background-image: url(/images/ad-banner.jpg);
   background-position: top 30% left 0;
   background-size: cover;
-  color: var(--productImage);
+  color: var(--adBannerText);
   font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   font-size: 3.5em;
   margin-inline: 15%;
