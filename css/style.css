@@ -230,17 +230,17 @@ form .search-icon {
 }
 
 #home-shop-now-head {
-  font-size: 3vw;
+  font-size: 3.5rem;
   margin: 0;
 }
 
 #home-shop-now-sub {
-  font-size: 1.2vw;
+  font-size: 1.5rem;
   margin-right: 100px;
 }
 
 #home-shop-now {
-  font-size: 1.5vw;
+  font-size: 2rem;
 }
 
 /*3.3 Home Page Shop Now Hover/Focus States*/
@@ -380,7 +380,7 @@ ul {
 }
 
 .about-us-overlay p {
-  margin-inline: 15vw;
+  margin-inline: 25%;
   padding-bottom: 50px;
   font-size: 2em;
   font-weight: 900;
