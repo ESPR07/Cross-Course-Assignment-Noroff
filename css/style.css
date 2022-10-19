@@ -214,7 +214,6 @@ form .search-icon {
   background-color: rgba(255, 255, 255, 0.6);
   color: var(--textColor);
   font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
-  height: 20vw;
   width: 30vw;
   display: flex;
   align-items: center;
