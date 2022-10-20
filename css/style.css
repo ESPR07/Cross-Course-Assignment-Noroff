@@ -65,9 +65,11 @@ m2. Mobile Home Page
 
 m3. Mobile Browse Page
 
-m4. Mobile About Us Page
+m4. Mobile Product Page
 
-m5. Mobile Contact Page
+m5. Mobile About Us Page
+
+m6. Mobile Contact Page
 
 ========================================================================
 ========================================================================*/
@@ -271,7 +273,6 @@ ul {
   padding-top: 20px;
   position: relative;
   width: 100%;
-  min-width: 1300px;
   height: 100%;
   text-align: center;
 }
@@ -707,7 +708,40 @@ ul {
   }
 
   /*==========================
-      m4. Mobile About Us Page
+      m4. Mobile Product Page
+==============================*/
+
+  .product-wrapper {
+    flex-direction: column;
+    margin-inline: 20px;
+    padding-bottom: 20%;
+  }
+
+  .product-page-image-container img {
+    width: 100%;
+  }
+
+  .product-text-container {
+    margin-left: 0;
+    border-bottom: none;
+  }
+
+  .product-text-container h1 {
+    margin-bottom: 20px;
+  }
+
+  .product-text-container p {
+    margin-bottom: 20px;
+  }
+
+  .product-page-buy-button {
+    height: 60px;
+    color: var(--buyNowInactive);
+    background-color: var(--buyNowActive);
+  }
+
+  /*==========================
+      m5. Mobile About Us Page
 ==============================*/
 
   .about-us-overlay {
@@ -725,7 +759,7 @@ ul {
   }
 
   /*=========================
-      m5. Mobile Contact Page
+      m6. Mobile Contact Page
 =============================*/
 
   .contact-info {
