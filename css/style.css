@@ -711,6 +711,10 @@ ul {
       m4. Mobile Product Page
 ==============================*/
 
+  .product-page-ad-background {
+    padding-top: 0;
+  }
+
   .product-wrapper {
     flex-direction: column;
     margin-inline: 20px;
