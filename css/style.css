@@ -12,7 +12,7 @@
   --textColor: #0a3641;
   --navBackground: #f8f8f8;
   --searchbarColor: #d7d7d7;
-  --buynowInactive: #d9d9d9;
+  --buyNowInactive: #d9d9d9;
   --buyNowActive: #0a3641;
   --checkoutButton: #8c4300;
   --checkoutButtonInactive: #ffffff;
@@ -46,9 +46,11 @@ Desktop
   4.2 Styling for the ad banner on top of the page
   4.3 Product Grid Styling
 
-5. About Us Page
+5. Product Page
 
-6. Contact Page
+6. About Us Page
+
+7. Contact Page
 
 ======
 Mobile
@@ -91,6 +93,7 @@ body {
   padding: 0;
   font-family: "manrope", Verdana, Tahoma, sans-serif;
   font-weight: 900;
+  color: var(--textColor);
 }
 
 /*==============
@@ -319,6 +322,10 @@ ul {
   margin-left: 10px;
 }
 
+.browse-container h1:hover {
+  text-decoration: underline;
+}
+
 .browse-container p {
   color: var(--productColorText);
   font-size: 1rem;
@@ -364,7 +371,71 @@ ul {
 }
 
 /*=====================
-      5. About Us Page
+      5. Product Page
+=======================*/
+
+.product-page-ad-background {
+  margin-top: 72px;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+
+.product-wrapper {
+  margin-inline: 15%;
+  margin-bottom: 10%;
+  display: flex;
+}
+
+.product-page-image-container {
+  background-color: var(--productImage);
+}
+
+.product-text-container {
+  border-top: 2px solid var(--textColor);
+  border-bottom: 2px solid var(--textColor);
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.product-text-container h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.product-text-container p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.price-button-wrap {
+  margin-top: 10%;
+}
+
+.product-text-container h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.product-page-buy-button {
+  font-weight: 900;
+  color: var(--buyNowActive);
+  background-color: var(--buyNowInactive);
+  font-size: 1.3rem;
+  height: 40px;
+  width: 100%;
+  border: none;
+}
+
+.product-page-buy-button:hover {
+  color: var(--buyNowInactive);
+  background-color: var(--buyNowActive);
+  cursor: pointer;
+}
+
+/*=====================
+      6. About Us Page
 =======================*/
 
 .about-us-overlay {
@@ -388,7 +459,7 @@ ul {
 }
 
 /*=====================
-      6. Contact Page
+      7. Contact Page
 =======================*/
 
 .contact-overlay {
