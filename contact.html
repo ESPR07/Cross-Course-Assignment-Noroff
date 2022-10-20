@@ -15,30 +15,40 @@
         <label for="burger-menu" id="burger-icon">
           <img src="/images/hamburger-icon.png" alt="Navigation List Button" />
         </label>
-        <a href="/index.html">
+        <a href="/index.html" title="go to the home page">
           <img src="/images/Logo.png" alt="logo" id="nav-logo-mobile" />
         </a>
         <section class="nav-container">
-          <a href="/index.html">
+          <a href="/index.html" title="go to the home page">
             <img src="/images/Logo.png" alt="logo" id="nav-logo" />
           </a>
-          <a href="/browse-page.html" id="nav-collection">Collection</a>
+          <a
+            href="/browse-page.html"
+            id="nav-collection"
+            title="Look through our collection of items"
+            >Collection</a
+          >
           <form action="#" method="POST">
             <input type="text" placeholder="Search" class="nav-search" />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>
           </form>
-          <a href="/about-us.html" id="nav-about-us">About Us</a>
-          <a href="/contact.html">
+          <a
+            href="/about-us.html"
+            id="nav-about-us"
+            title="Read more about who we are"
+            >About Us</a
+          >
+          <a href="/contact.html" title="Get in touch with us with questions">
             <img
               src="/images/contact-icon.jpg"
               alt="Contact Icon"
               id="nav-contact"
             />
           </a>
-          <a href="/cart.html"
-            ><img src="/images/cart-icon.jpg" alt="Cart Icon" id="nav-cart"
+          <a href="/cart.html" title="See what's currently in your cart">
+            <img src="/images/cart-icon.jpg" alt="Cart Icon" id="nav-cart"
           /></a>
         </section>
       </nav>
@@ -60,7 +70,7 @@
                 type="text"
                 name="email"
                 id="email"
-                placeholder="Your Email"
+                placeholder="Enter your email"
                 class="contact-text"
               />
               <label for="subject">Subject</label>
@@ -68,7 +78,7 @@
                 type="text"
                 name="subject"
                 id="subject"
-                placeholder="Subject"
+                placeholder="What is your question about?"
                 class="contact-text"
               />
               <label for="message">Message</label>
@@ -76,10 +86,14 @@
                 name="message"
                 id="message"
                 maxlength="250"
-                placeholder="Message"
+                placeholder="Enter your question"
                 class="message-form"
               ></textarea>
-              <button type="submit" class="contact-submit-button">
+              <button
+                type="submit"
+                class="contact-submit-button"
+                title="Submit your question"
+              >
                 Submit
               </button>
             </form>
