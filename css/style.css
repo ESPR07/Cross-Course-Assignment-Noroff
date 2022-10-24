@@ -52,6 +52,8 @@ Desktop
 
 7. Contact Page
 
+8. Cart Page
+
 ======
 Mobile
 ======
@@ -531,6 +533,35 @@ ul {
   background-color: var(--checkoutButtonInactive);
   color: var(--textColor);
   cursor: pointer;
+}
+
+/*=====================
+      8. Cart Page
+=======================*/
+
+.cart-background {
+  background-color: var(--browseBackground);
+  margin-top: 72px;
+  padding-top: 20px;
+}
+
+.cart-container {
+  background-color: #ffffff;
+}
+
+.cart-product {
+  border-bottom: 2px solid var(--productColorText);
+  border-top: 2px solid var(--productColorText);
+  display: flex;
+}
+
+.cart-product-image {
+  background-color: var(--productImage);
+  height: 300px;
+  width: 245.5px;
+  margin-block: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /*==============
