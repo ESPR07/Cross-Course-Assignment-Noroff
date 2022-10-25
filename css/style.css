@@ -527,7 +527,7 @@ ul {
 .cart-background {
   background-color: var(--browseBackground);
   margin-top: 72px;
-  padding-top: 20px;
+  padding-top: 50px;
   padding-inline: 5%;
   height: 90vh;
 }
@@ -873,6 +873,11 @@ ul {
     height: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .cart-container {
+    padding-top: 20px;
+    padding-inline: 10px;
   }
 
   .cart-product {
