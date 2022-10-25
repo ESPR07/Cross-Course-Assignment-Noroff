@@ -96,14 +96,106 @@
             </div>
           </div>
           <div class="cart-payment-container">
-            <form class="payment-form">
+            <form method="POST" class="payment-form">
               <label for="name">Full Name</label>
               <input
                 type="text"
                 name="Name"
                 id="name"
+                class="payment-name"
                 placeholder="Full Name"
               />
+              <div class="payment-location">
+                <div>
+                  <label for="address">Address</label>
+                  <input
+                    type="text"
+                    name="Address"
+                    id="address"
+                    class="payment-location-input"
+                    placeholder="Your Adress"
+                  />
+                </div>
+                <div>
+                  <label for="country">Country</label>
+                  <input
+                    type="text"
+                    name="Country"
+                    id="country"
+                    class="payment-location-input"
+                    placeholder="Country"
+                  />
+                </div>
+              </div>
+              <div class="payment-location">
+                <div>
+                  <label for="city">City</label>
+                  <input
+                    type="text"
+                    name="City"
+                    id="city"
+                    class="payment-location-input"
+                    placeholder="Your City"
+                  />
+                </div>
+                <div>
+                  <label for="postal">Postal Code</label>
+                  <input
+                    type="text"
+                    name="Postal"
+                    id="postal"
+                    class="payment-location-input"
+                    placeholder="Postal Code"
+                  />
+                </div>
+              </div>
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                name="Card Number"
+                id="card-number"
+                class="payment-card"
+                placeholder="Card Number"
+              />
+              <div class="payment-location">
+                <div>
+                  <label for="month">Month</label>
+                  <input
+                    type="text"
+                    name="Month"
+                    id="month"
+                    class="payment-location-input"
+                    placeholder="Month"
+                  />
+                </div>
+                <div>
+                  <label for="year">Year</label>
+                  <input
+                    type="text"
+                    name="Year"
+                    id="year"
+                    class="payment-location-input"
+                    placeholder="Year"
+                  />
+                </div>
+                <div>
+                  <label for="cvv">CVV</label>
+                  <input
+                    type="text"
+                    name="CVV"
+                    id="cvv"
+                    class="payment-location-input"
+                    placeholder="CVV"
+                  />
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="contact-submit-button"
+                title="Submit your question"
+              >
+                Checkout
+              </button>
             </form>
           </div>
         </section>
