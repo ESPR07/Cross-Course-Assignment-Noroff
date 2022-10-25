@@ -100,6 +100,15 @@ body {
   color: var(--textColor);
 }
 
+input {
+  background-color: var(--searchbarColor);
+  border: none;
+  color: var(--textColor);
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
 /*==============
 Nav Bar Styling
 ================*/
@@ -144,32 +153,21 @@ form {
 }
 
 form .nav-search {
-  background-color: var(--searchbarColor);
-  border: none;
   padding-left: 20px;
-  color: var(--textColor);
-  left: 5%;
+  padding-block: 5px;
   width: 100%;
   height: 25px;
   border-radius: 15px;
-  font-size: 1em;
-  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  font-size: 1.3rem;
 }
 
 form .search-icon {
   background-color: var(--searchbarColor);
   border: none;
   border-left: 2px solid var(--textColor);
-  color: var(--textColor);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   margin-left: -35px;
-  height: 27px;
-  pointer-events: none;
-}
-
-#nav-about-us {
-  white-space: nowrap;
 }
 
 #nav-contact {
@@ -503,7 +501,7 @@ ul {
   width: 100%;
   height: 25px;
   border-radius: 7px;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 900;
 }
 
@@ -543,17 +541,25 @@ ul {
   background-color: var(--browseBackground);
   margin-top: 72px;
   padding-top: 20px;
-  padding-inline: 10%;
+  padding-inline: 5%;
+  height: 90vh;
 }
 
 .cart-container {
   background-color: #ffffff;
+  padding: 20px;
+}
+
+.cart-product-header {
+  font-size: 2rem;
 }
 
 .cart-product {
   border-bottom: 2px solid var(--productColorText);
   border-top: 2px solid var(--productColorText);
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .cart-wrapper {
@@ -565,9 +571,6 @@ ul {
   background-color: var(--productImage);
   height: 300px;
   width: 245.5px;
-  margin-block: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .cart-product-price {
@@ -578,11 +581,7 @@ ul {
   background-color: var(--textColor);
   color: var(--adBannerText);
   width: 500px;
-}
-
-.cart-form-header {
-  padding-bottom: 20px;
-  margin-inline: 20px;
+  padding-inline: 20px;
 }
 
 .cart-form-sub-container {
@@ -593,11 +592,15 @@ ul {
 .cart-form-sub-text {
   display: flex;
   justify-content: space-between;
-  margin-inline: 10%;
 }
 
 .cart-form-total {
   font-size: 1.3rem;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
 }
 
 /*==============
