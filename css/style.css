@@ -492,17 +492,6 @@ ul {
   text-align: left;
 }
 
-.contact-text {
-  background-color: var(--searchbarColor);
-  border: none;
-  color: var(--textColor);
-  width: 100%;
-  height: 25px;
-  border-radius: 7px;
-  font-size: 1rem;
-  font-weight: 900;
-}
-
 .message-form {
   background-color: var(--searchbarColor);
   border: none;
@@ -603,6 +592,7 @@ ul {
   flex-direction: column;
   margin-top: 10px;
 }
+
 .payment-form input {
   width: 100%;
 }
