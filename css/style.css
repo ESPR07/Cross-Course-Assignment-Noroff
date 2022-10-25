@@ -534,7 +534,7 @@ ul {
 
 .cart-container {
   background-color: #ffffff;
-  padding: 20px;
+  padding-inline: 70px;
 }
 
 .cart-product-header {
