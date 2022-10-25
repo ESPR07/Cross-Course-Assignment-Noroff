@@ -882,6 +882,7 @@ ul {
 
   .cart-product {
     flex-direction: column;
+    border-bottom: none;
   }
 
   .cart-product-image {
