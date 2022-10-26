@@ -1,11 +1,13 @@
 @font-face {
   font-family: "manrope";
   src: url(./font/Manrope-VariableFont_wght.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: "manrope-bold";
   src: url(./font/Manrope-ExtraBold.ttf);
+  font-display: swap;
 }
 
 :root {
@@ -179,6 +181,10 @@ form .search-icon {
   margin-right: 50px;
 }
 
+ul {
+  display: none;
+}
+
 /* 2.1 Nav Bar Hover Styles with focus attributes for tab'ing */
 
 #nav-collection:hover,
@@ -219,7 +225,7 @@ form .search-icon {
   background-color: rgba(255, 255, 255, 0.6);
   color: var(--textColor);
   font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
-  width: 30vw;
+  width: 35%;
   display: flex;
   align-items: center;
   position: absolute;
@@ -254,10 +260,6 @@ form .search-icon {
 .home-shop-now-button:focus {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 1);
-}
-
-ul {
-  display: none;
 }
 
 /*===================
