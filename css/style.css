@@ -418,13 +418,13 @@ ul {
 }
 
 .product-page-buy-button {
-  font-weight: 900;
   color: var(--buyNowActive);
   background-color: var(--buyNowInactive);
+  display: flex;
+  justify-content: center;
   font-size: 1.3rem;
-  height: 40px;
-  width: 100%;
-  border: none;
+  font-weight: 900;
+  padding-block: 10px;
 }
 
 .product-page-buy-button:hover {
