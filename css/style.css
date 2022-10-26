@@ -661,7 +661,6 @@ ul {
     height: 100%;
     box-shadow: none;
     z-index: -1;
-    transition: 5ms;
   }
 
   form {
