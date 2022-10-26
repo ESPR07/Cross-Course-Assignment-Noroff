@@ -423,7 +423,7 @@ ul {
   display: flex;
   justify-content: center;
   font-size: 1.3rem;
-  font-weight: 900;
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   padding-block: 10px;
 }
 
