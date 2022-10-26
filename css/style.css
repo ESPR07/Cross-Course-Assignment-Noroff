@@ -422,7 +422,7 @@ ul {
   background-color: var(--buyNowInactive);
   display: flex;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
   padding-block: 10px;
 }
