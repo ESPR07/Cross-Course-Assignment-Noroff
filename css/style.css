@@ -91,7 +91,6 @@ m6. Mobile Contact Page
 a:link,
 a:visited {
   text-decoration: none;
-  color: var(--textColor);
 }
 
 body {
@@ -147,6 +146,11 @@ ul {
 
 #nav-logo-mobile {
   display: none;
+}
+
+#nav-collection,
+#nav-about-us {
+  color: var(--textColor);
 }
 
 form {
@@ -465,7 +469,6 @@ ul {
   background-color: rgba(10, 54, 65, 0.6);
   color: var(--browseBackground);
   position: relative;
-  margin-top: 70px;
   padding-top: 40px;
   text-align: center;
 }
@@ -504,14 +507,14 @@ ul {
 }
 
 .contact-submit-button {
-  font-weight: 900;
-  color: var(--backgrounColor);
+  font-family: "manrope-bold", Verdana, Tahoma, sans-serif;
+  color: var(--checkoutButtonInactive);
   background-color: var(--checkoutButton);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-top: 20px;
   height: 40px;
   width: 100%;
-  border: none;
+  text-align: center;
 }
 
 .contact-submit-button:hover {
@@ -526,7 +529,6 @@ ul {
 
 .cart-background {
   background-color: var(--browseBackground);
-  margin-top: 72px;
   padding-top: 50px;
   padding-inline: 5%;
   height: 90vh;
