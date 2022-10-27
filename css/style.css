@@ -56,6 +56,8 @@ Desktop
 
 8. Cart Page
 
+9. Success Pages
+
 ======
 Mobile
 ======
@@ -617,6 +619,10 @@ ul {
   padding-block: 100px;
   padding-inline: 10%;
 }
+
+/*=====================
+      9. Success Pages
+=======================*/
 
 .success-wrapper img {
   max-width: 150px;
