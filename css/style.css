@@ -158,10 +158,8 @@ form {
 }
 
 form .nav-search {
-  padding-left: 10px;
   width: 100%;
-  height: 25px;
-  border-radius: 15px;
+  border-radius: 16px;
   font-size: 1.3rem;
 }
 
@@ -169,8 +167,8 @@ form .search-icon {
   background-color: var(--searchbarColor);
   border: none;
   border-left: 2px solid var(--textColor);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   margin-left: -35px;
 }
 
@@ -193,14 +191,14 @@ ul {
 
 /* 2.1 Nav Bar Hover Styles with focus attributes for tab'ing */
 
-#nav-collection:hover,
-#nav-collection:focus,
-#nav-about-us:hover,
-#nav-about-us:focus,
-#nav-contact:hover,
-#nav-contact:focus,
-#nav-cart:hover,
-#nav-cart:focus {
+.nav-collection:hover,
+.nav-collection:focus,
+.nav-about-us:hover,
+.nav-about-us:focus,
+.nav-contact:hover,
+.nav-contact:focus,
+.nav-cart:hover,
+.nav-cart:focus {
   border-bottom: 3px solid var(--textColor);
   cursor: pointer;
   outline: none;
@@ -447,7 +445,7 @@ ul {
   background-color: rgba(10, 54, 65, 0.6);
   color: var(--browseBackground);
   position: relative;
-  padding-top: 70px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -470,7 +468,7 @@ ul {
   background-color: rgba(10, 54, 65, 0.6);
   color: var(--browseBackground);
   position: relative;
-  padding-top: 70px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -530,9 +528,9 @@ ul {
 
 .cart-background {
   background-color: var(--browseBackground);
-  padding-top: 50px;
+  padding-top: 120px;
   padding-inline: 5%;
-  height: 90vh;
+  height: 100vh;
 }
 
 .cart-container {
@@ -619,7 +617,7 @@ ul {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding-block: 100px;
+  padding-block: 130px;
   padding-inline: 10%;
 }
 
@@ -656,23 +654,12 @@ ul {
 
   /* m1.1 Mobile Nav Styling*/
 
-  #burger-menu {
-    right: 0px;
-    display: none;
-  }
-
-  #burger-icon img {
-    height: 50px;
-  }
-
-  nav {
-    height: 70px;
-    width: 100%;
+  .burger-icon {
     display: flex;
-    align-items: center;
+    height: 65px;
   }
 
-  #nav-logo {
+  .nav-logo {
     margin: 0;
   }
 
@@ -680,7 +667,7 @@ ul {
     display: none;
   }
 
-  #burger-menu:checked ~ .nav-container {
+  .burger-menu:checked ~ .nav-container {
     background-color: var(--navBackground);
     display: flex;
     flex-direction: column;
@@ -688,6 +675,7 @@ ul {
     height: 100%;
     box-shadow: none;
     z-index: -1;
+    padding: 0;
   }
 
   form {
@@ -740,8 +728,7 @@ ul {
     width: 100%;
     display: flex;
     align-items: center;
-    top: 70px;
-    padding-top: 20px;
+    top: 65px;
     transition: 200ms;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
@@ -772,7 +759,7 @@ ul {
 
   .browse-background {
     padding: 0;
-    margin-top: 70px;
+    margin-top: 65px;
   }
 
   .browse-container {
@@ -799,7 +786,7 @@ ul {
 ==============================*/
 
   .product-page-ad-background {
-    padding-top: 0;
+    padding-top: 65px;
   }
 
   .product-wrapper {
@@ -826,7 +813,6 @@ ul {
   }
 
   .product-page-buy-button {
-    height: 60px;
     color: var(--buyNowInactive);
     background-color: var(--buyNowActive);
   }
