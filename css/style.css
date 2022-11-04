@@ -141,12 +141,13 @@ Nav Bar Styling
   display: none;
 }
 
-.nav-logo {
+.nav-logo-desktop {
   margin-left: 10px;
   height: 100px;
 }
 
-.nav-logo img {
+.nav-logo-desktop img {
+  display: flex;
   height: 90px;
   width: 100%;
 }
@@ -660,11 +661,22 @@ ul {
 
   .burger-icon {
     display: flex;
+    position: relative;
     height: 65px;
   }
 
-  .nav-logo {
-    margin: 0;
+  .nav-logo-desktop {
+    display: none;
+  }
+
+  .nav-logo,
+  .nav-logo img {
+    position: absolute;
+    left: 50%;
+    flex: 0 1 auto;
+    height: 65px;
+    width: auto;
+    transform: translateX(-50%);
   }
 
   .nav-container {
@@ -679,7 +691,7 @@ ul {
     height: 100%;
     box-shadow: none;
     z-index: -1;
-    padding: 0;
+    padding-top: 50px;
   }
 
   form {
