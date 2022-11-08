@@ -322,14 +322,16 @@ ul {
 
 .browse-product-box {
   position: relative;
-}
-
-.browse-product-link {
   display: flex;
   flex-direction: column;
   background-color: white;
   box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
-  height: 700px;
+  min-height: 600px;
+}
+
+.browse-product-link {
+  height: 100%;
+  width: 100%;
 }
 
 .browse-container h1 {
@@ -360,18 +362,17 @@ ul {
 
 .browse-product-image {
   background-color: var(--productImage);
-  width: 100%;
-  height: 80%;
   margin: 0;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .browse-product-image img {
-  margin: 10px;
-  height: 95%;
-  width: 95%;
+  max-height: 380px;
+  width: 90%;
+  object-fit: contain;
 }
 
 .browse-cart-icon {
