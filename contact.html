@@ -72,7 +72,11 @@
             <p>Mon-Fri: 07:00 - 16:00</p>
           </div>
           <div class="contact-form-container">
-            <form method="POST" class="contact-form">
+            <form
+              method="POST"
+              action="/contact-submit-success.html"
+              class="contact-form"
+            >
               <label for="email">Your Email</label>
               <input
                 type="text"
@@ -80,6 +84,7 @@
                 id="email"
                 placeholder="Enter your email"
                 class="contact-text"
+                required
               />
               <label for="subject">Subject</label>
               <input
@@ -88,6 +93,7 @@
                 id="subject"
                 placeholder="What is your question about?"
                 class="contact-text"
+                required
               />
               <label for="message">Message</label>
               <textarea
@@ -96,14 +102,9 @@
                 maxlength="250"
                 placeholder="Enter your question"
                 class="message-form"
+                required
               ></textarea>
-              <a
-                href="/contact-submit-success.html"
-                class="contact-submit-button"
-                title="Submit your question"
-              >
-                Submit
-              </a>
+              <button class="contact-submit-button">Submit</button>
             </form>
           </div>
         </section>

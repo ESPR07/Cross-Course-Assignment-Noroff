@@ -104,7 +104,11 @@
             </div>
           </div>
           <div class="cart-payment-container">
-            <form method="POST" class="payment-form">
+            <form
+              method="POST"
+              action="/purchase-success.html"
+              class="payment-form"
+            >
               <label for="name">Full Name</label>
               <input
                 type="text"
@@ -206,13 +210,7 @@
                   />
                 </div>
               </div>
-              <a
-                href="/purchase-success.html"
-                class="contact-submit-button"
-                title="Submit your question"
-              >
-                Checkout
-              </a>
+              <button class="contact-submit-button">Checkout</button>
             </form>
           </div>
         </section>

@@ -527,6 +527,7 @@ ul {
   height: 40px;
   width: 100%;
   text-align: center;
+  border: none;
 }
 
 .contact-submit-button:hover {
