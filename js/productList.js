@@ -1,6 +1,6 @@
 export const productList = [
     {
-        "id": 1,
+        "id": "1",
         "name": "1st V2 Alpint Jacket",
         "color": "Orange/Grey",
         "description": 'Robust and durable 3-layer alpint jacket in wind and waterproof material. 1st V2 Alpint Jacket gives you good weather protection in challenging weather. The durable 3-layer Dermalax material has good breathing properties and is wind and waterproof.',
@@ -8,7 +8,7 @@ export const productList = [
         "image": "/images/RainyDays_Jacket1.webp"
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "XM Xtreme Jacket",
         "color": "Grey",
         "description": "Functional every day jacket for all weathers. Lightweight and comfortable.",
@@ -16,7 +16,7 @@ export const productList = [
         "image": "/images/RainyDays_Jacket5.webp"
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "Patagom Fleece Jacket",
         "color": "Brown",
         "description": "Wonderful fleece jacket for both wearing on it's own or under a jacket when the temperature get's low.",
@@ -24,7 +24,7 @@ export const productList = [
         "image": "/images/RainyDays_Jacket7.webp"
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "Scott Bike Jacket",
         "color": "Black",
         "description": "Perfect jacket for you next biketrip, it's both durable and waterproof as well as windproof.",
@@ -32,7 +32,7 @@ export const productList = [
         "image": "/images/RainyDays_Jacket6.webp"
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "Scott Wind Jacket",
         "color": "Grey",
         "description": "Windproof and waterproof wind jacket perfect for hiking in the mountain on a windy day.",
@@ -40,7 +40,7 @@ export const productList = [
         "image": "/images/RainyDays_Jacket2.webp"
     },
     {
-        "id": 6,
+        "id": "6",
         "name": "Comfrt Excercise Jacket",
         "color": "Red",
         "description": "Comfortable breathing jacket for outdoor excercises. It also has built in handwarmers.",
