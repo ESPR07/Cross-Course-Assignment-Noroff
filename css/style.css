@@ -115,7 +115,6 @@ input {
   border: none;
   color: var(--textColor);
   border-radius: 7px;
-  font-weight: 700;
   padding-block: 5px;
   padding-left: 5px;
 }
@@ -260,6 +259,7 @@ ul {
 #home-shop-now-sub {
   font-size: 1.5rem;
   margin-right: 100px;
+  font-weight: normal;
 }
 
 #home-shop-now {
