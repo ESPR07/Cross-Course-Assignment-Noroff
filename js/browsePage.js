@@ -41,7 +41,6 @@ for (let i = 0; i < productList.length; i++) {
         productBox.appendChild(cartIcon);
 
     }
-    console.log(productList[i]);
     createHTML();
 }
 

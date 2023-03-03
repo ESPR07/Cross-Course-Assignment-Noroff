@@ -7,8 +7,6 @@ const ID = param.get("id");
 
 const product = productList.find(product => product.id === ID);
 
-console.log(product);
-
 const imageContainer = document.createElement("div");
 imageContainer.classList.add("product-page-image-container");
 container.appendChild(imageContainer);
