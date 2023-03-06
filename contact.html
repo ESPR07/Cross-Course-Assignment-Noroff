@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contact us if you have any questions" />
     <link href=".//css/style.css" rel="stylesheet" />
+    <script defer src="/js/component/searchBar.js"></script>
     <title>Rainy Days | Contact</title>
   </head>
   <body>
@@ -32,8 +33,8 @@
             title="Look through our collection of items"
             >Collection</a
           >
-          <form action="/browse-page.html">
-            <input type="text" placeholder="Search" class="nav-search" />
+          <form onsubmit="" class="search-form">
+            <input type="text" placeholder="Search" name="search" id="search-bar" class="nav-search" />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Look through what you are buying." />
     <link href=".//css/style.css" rel="stylesheet" />
+    <script defer src="/js/component/searchBar.js"></script>
     <title>Rainy Days | Cart</title>
   </head>
   <body>
@@ -32,8 +33,8 @@
             title="Look through our collection of items"
             >Collection</a
           >
-          <form action="/browse-page.html">
-            <input type="text" placeholder="Search" class="nav-search" />
+          <form onsubmit="" class="search-form">
+            <input type="text" placeholder="Search" name="search" id="search-bar" class="nav-search" />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>
@@ -71,7 +72,7 @@
               alt="1st V2 Alpint Jacket"
               class="cart-product-image"
             />
-            <div clas="cart-product-info">
+            <div class="cart-product-info">
               <h2 class="cart-product-header">1st V2 Alpint Jacket</h2>
               <h3 class="cart-product-color">Orange/Grey</h3>
               <p class="cart-product-description">
