@@ -1,11 +1,14 @@
 import { productList } from "./productList.js";
 const container = document.querySelector(".product-wrapper");
+const pageTitle = document.querySelector("title");
 
 const fetchID = document.location.search;
 const param = new URLSearchParams(fetchID);
 const ID = param.get("id");
 
 const product = productList.find(product => product.id === ID);
+
+pageTitle.innerText = product.name;
 
 const imageContainer = document.createElement("div");
 imageContainer.classList.add("product-page-image-container");

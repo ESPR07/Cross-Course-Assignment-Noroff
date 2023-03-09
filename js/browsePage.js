@@ -43,12 +43,22 @@ productListFiltered.forEach(({id, name, color, price, image}) => {
         priceElement.innerText = "kr " + price;
         link.appendChild(priceElement);
 
-        let cartIcon = document.createElement("a");
-        cartIcon.href = "/cart.html";
+        let cartIcon = document.createElement("button");
         cartIcon.title = "Buy " + name + "now";
         cartIcon.classList.add("browse-cart-icon");
+        cartIcon.onclick = () => addToCart(id.toString());
         productBox.appendChild(cartIcon);
 
     }
     createHTML();
 })
+
+function addToCart(id) {
+    if(localStorage.getItem("cart")){
+        const cart = JSON.parse(localStorage.getItem("cart"));
+        const newCart = [id, ...cart];
+        localStorage.setItem("cart", JSON.stringify(newCart));
+    }   else {
+        localStorage.setItem("cart", JSON.stringify([id]));
+    }
+}
