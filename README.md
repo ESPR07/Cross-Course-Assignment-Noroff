@@ -1,5 +1,5 @@
-# School Project Test
-Doing a trial run of a page created in Figma as part of a school project, which is now gonna get into development stage.
+# School Project Test Interaction Design
+Taken the page from the HTML/CSS course assignment and added all functionality and changes needed based on feedback from users.
 
 ## The deployed site for this repository:
 https://rainydays-test-espr.netlify.app/
