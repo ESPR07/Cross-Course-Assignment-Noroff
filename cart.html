@@ -35,7 +35,13 @@
             >Collection</a
           >
           <form onsubmit="" class="search-form">
-            <input type="text" placeholder="Search" name="search" id="search-bar" class="nav-search" />
+            <input
+              type="text"
+              placeholder="Search"
+              name="search"
+              id="search-bar"
+              class="nav-search"
+            />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>
@@ -67,24 +73,17 @@
       <div class="cart-wrapper">
         <section class="cart-container">
           <h1>My Cart</h1>
-          <div class="product-container">
-          </div>
+          <div class="product-container"></div>
         </section>
         <section class="cart-form">
           <h1 class="cart-form-header">Summary</h1>
           <div class="cart-form-sub-container">
-            <div class="cart-form-sub-text">
-              <p>Subtotal</p>
-              <p>kr 1900</p>
-            </div>
-            <div class="cart-form-sub-text">
+            <div class="cart-form-sub-text" id="cart-price"></div>
+            <div class="cart-form-sub-text" id="cart-shipping">
               <p>Shipping</p>
               <p>Free</p>
             </div>
-            <div class="cart-form-sub-text">
-              <p class="cart-form-total">Total</p>
-              <p class="cart-form-total">kr 1900</p>
-            </div>
+            <div class="cart-form-sub-text" id="total-price"></div>
           </div>
           <div class="cart-payment-container">
             <form action="/purchase-success.html" class="payment-form">
