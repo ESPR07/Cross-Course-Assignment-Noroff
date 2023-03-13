@@ -1,5 +1,7 @@
 import { productList } from "../productList.js";
 const productContainer = document.querySelector(".product-container");
+const priceContainer = document.querySelector("#cart-price");
+const totalPriceContainer = document.querySelector("#total-price");
 
 const cart = JSON.parse(localStorage.getItem("cart"));
 var totalPrice = 0;
@@ -40,6 +42,11 @@ try {
           productDescription.innerText = description;
           infoContainer.appendChild(productDescription);
 
+          const productPrice = document.createElement("p");
+          productPrice.classList.add("cart-product-price");
+          productPrice.innerText = "kr " + price;
+          infoContainer.appendChild(productPrice);
+
           const deleteButton = document.createElement("button");
           deleteButton.classList.add("delete-button");
           deleteButton.onclick = () => removeItem(id.toString());
@@ -58,6 +65,28 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+function createPriceHTML() {
+  const priceTitle = document.createElement("p");
+  priceTitle.innerText = "Subtotal";
+  priceContainer.appendChild(priceTitle);
+
+  const priceValue = document.createElement("p");
+  priceValue.innerText = "kr " + totalPrice;
+  priceContainer.appendChild(priceValue);
+
+  const totalPriceTitle = document.createElement("p");
+  totalPriceTitle.classList.add("cart-form-total");
+  totalPriceTitle.innerText = "Total";
+  totalPriceContainer.appendChild(totalPriceTitle);
+
+  const totalPriceValue = document.createElement("p");
+  totalPriceValue.classList.add("cart-form-total");
+  totalPriceValue.innerText = "kr " + totalPrice;
+  totalPriceContainer.appendChild(totalPriceValue);
+}
+
+createPriceHTML();
 
 function removeItem(id) {
   if (localStorage.getItem("cart")) {
