@@ -1,3 +1,4 @@
+// Error validation for the contact page.
 const emailValue = document.querySelector("#email");
 const emailError = document.querySelector(".email-form-error");
 
@@ -8,12 +9,16 @@ const messageValue = document.querySelector("#message");
 const messageError = document.querySelector(".message-form-error");
 
 const formError = document.querySelector(".form-error");
-const contactButton = document.querySelector(".contact-submit-button");
+const submitButton = document.querySelector(".contact-submit-button");
 
-contactButton.addEventListener("click", validationEvent);
+submitButton.addEventListener("click", contactValidationEvent);
 
-function validator(value, compareValue) {
+function letterValidator(value, compareValue) {
   return value.trim().length > compareValue;
+}
+
+function numberValidator(value, limit) {
+  return value === Number && value === limit;
 }
 
 function emailCheck(email) {
@@ -22,7 +27,7 @@ function emailCheck(email) {
   return patternMatch;
 }
 
-function validationEvent(event) {
+function contactValidationEvent(event) {
   event.preventDefault();
   if (emailCheck(emailValue.value) === true) {
     emailError.style.display = "none";
@@ -30,13 +35,13 @@ function validationEvent(event) {
     emailError.style.display = "block";
   }
 
-  if (validator(subjectValue.value, 0)) {
+  if (letterValidator(subjectValue.value, 0)) {
     subjectError.style.display = "none";
   } else {
     subjectError.style.display = "block";
   }
 
-  if (validator(messageValue.value, 0)) {
+  if (letterValidator(messageValue.value, 0)) {
     messageError.style.display = "none";
   } else {
     messageError.style.display = "block";
@@ -44,8 +49,8 @@ function validationEvent(event) {
 
   if (
     emailCheck(emailValue.value) &&
-    validator(subjectValue.value, 5) &&
-    validator(messageValue.value, 15) === true
+    letterValidator(subjectValue.value, 5) &&
+    letterValidator(messageValue.value, 15) === true
   ) {
     location.href = "/contact-submit-success.html";
   }

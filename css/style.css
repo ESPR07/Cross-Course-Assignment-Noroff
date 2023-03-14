@@ -672,7 +672,6 @@ ul {
   color: var(--adBannerText);
   padding-inline: 20px;
   max-width: 350px;
-  max-height: 650px;
   padding-bottom: 20px;
 }
 
@@ -695,6 +694,13 @@ ul {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+}
+
+.cart-error {
+  color: red;
+  margin: 0px;
+  font-size: 0.8rem;
+  display: none;
 }
 
 .payment-form input {
