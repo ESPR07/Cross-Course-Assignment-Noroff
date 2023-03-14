@@ -71,7 +71,7 @@ function addToCart(id, price) {
       cartItems: {},
     };
     cartObject.cartItems[id] = 1;
-    console.log(cartObject);
     localStorage.setItem("cart", JSON.stringify(cartObject));
   }
+  window.location.reload();
 }

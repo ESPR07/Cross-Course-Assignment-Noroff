@@ -7,6 +7,7 @@
     <meta name="description" content="Get to know who we are." />
     <link href=".//css/style.css" rel="stylesheet" />
     <script defer src="/js/component/searchBar.js"></script>
+    <script defer src="/js/component/cartCounter.js"></script>
     <title>Rainy Days | About Us</title>
   </head>
   <body>
@@ -34,7 +35,13 @@
             >Collection</a
           >
           <form onsubmit="" class="search-form">
-            <input type="text" placeholder="Search" name="search" id="search-bar" class="nav-search" />
+            <input
+              type="text"
+              placeholder="Search"
+              name="search"
+              id="search-bar"
+              class="nav-search"
+            />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>
@@ -57,8 +64,9 @@
             class="nav-cart"
             title="See what's currently in your cart"
           >
-            <img src="/images/cart-icon.jpg" alt="Cart Icon"
-          /></a>
+            <img src="/images/cart-icon.jpg" alt="Cart Icon" />
+            <p class="cart-counter">1</p>
+          </a>
         </section>
       </nav>
     </header>

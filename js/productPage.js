@@ -66,4 +66,5 @@ function addToCart(id, price) {
     cartObject.cartItems[id] = 1;
     localStorage.setItem("cart", JSON.stringify(cartObject));
   }
+  window.location.reload();
 }
