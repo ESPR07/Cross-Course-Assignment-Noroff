@@ -8,7 +8,8 @@ if (searchValue != "" && searchValue != null) {
   productListFiltered = productList.filter(
     (product) =>
       product.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchValue.toLowerCase())
+      product.description.toLowerCase().includes(searchValue.toLowerCase()) ||
+      product.color.toLowerCase().includes(searchValue.toLowerCase())
   );
 }
 productListFiltered.forEach(({ id, name, color, price, image }) => {
