@@ -451,6 +451,7 @@ ul {
 .product-page-buy-button {
   color: var(--buyNowInactive);
   background-color: var(--buyNowActive);
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;

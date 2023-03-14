@@ -4,14 +4,14 @@ const priceContainer = document.querySelector("#cart-price");
 const totalPriceContainer = document.querySelector("#total-price");
 
 const cart = JSON.parse(localStorage.getItem("cart"));
-var totalPrice = 0;
+var totalPrice = cart.totalPrice;
 
 try {
-  if (!cart || cart.length === 0) {
+  if (!cart || cart.totalPrice === 0) {
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
   } else {
     productList.forEach(({ id, description, name, color, price, image }) => {
-      if (cart.includes(id)) {
+      if (cart.cartItems[id] > 0) {
         function createHTML() {
           const cartProduct = document.createElement("div");
           cartProduct.classList.add("cart-product");
@@ -42,6 +42,11 @@ try {
           productDescription.innerText = description;
           infoContainer.appendChild(productDescription);
 
+          const productAmount = document.createElement("p");
+          productAmount.classList.add("cart-product-amount");
+          productAmount.innerText = "Qty: " + cart.cartItems[id];
+          infoContainer.appendChild(productAmount);
+
           const productPrice = document.createElement("p");
           productPrice.classList.add("cart-product-price");
           productPrice.innerText = "kr " + price;
@@ -49,16 +54,11 @@ try {
 
           const deleteButton = document.createElement("button");
           deleteButton.classList.add("delete-button");
-          deleteButton.onclick = () => removeItem(id.toString());
+          deleteButton.onclick = () => removeItem(id.toString(), price);
           cartProduct.appendChild(deleteButton);
         }
 
         createHTML();
-
-        function cartPrice(price) {
-          totalPrice = totalPrice + price;
-        }
-        cartPrice(price);
       }
     });
   }
@@ -88,15 +88,13 @@ function createPriceHTML() {
 
 createPriceHTML();
 
-function removeItem(id) {
-  if (localStorage.getItem("cart")) {
-    const cartIndex = cart.indexOf(id);
-    if (cartIndex > -1) {
-      cart.splice(cartIndex, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      console.log(cartIndex);
-    }
-  }
-
+function removeItem(id, price) {
+  const totalPrice = Number(cart.totalPrice) - price;
+  cart.totalPrice = totalPrice;
+  const itemCount = Number(cart.itemCount) - 1;
+  cart.itemCount = itemCount;
+  const productAmount = Number(cart.cartItems[id] ?? 1) - 1;
+  cart.cartItems[id] = productAmount;
+  localStorage.setItem("cart", JSON.stringify(cart));
   window.location.reload();
 }
