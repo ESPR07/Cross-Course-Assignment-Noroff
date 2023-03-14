@@ -9,6 +9,7 @@
     <script type="module" src="/js/component/cartInteractions.js"></script>
     <script defer src="/js/component/searchBar.js"></script>
     <script defer src="/js/component/cartCounter.js"></script>
+    <script defer src="/js/component/cartFormError.js"></script>
     <title>Rainy Days | Cart</title>
   </head>
   <body>
@@ -98,6 +99,9 @@
                 placeholder="Full Name"
                 required
               />
+              <p class="cart-error" id="cart-name-error">
+                Please enter your name
+              </p>
               <div class="payment-location">
                 <div>
                   <label for="address">Address</label>
@@ -109,6 +113,9 @@
                     placeholder="Your Adress"
                     required
                   />
+                  <p class="cart-error" id="cart-address-error">
+                    Invalid Adress
+                  </p>
                 </div>
                 <div>
                   <label for="country">Country</label>
@@ -120,6 +127,9 @@
                     placeholder="Country"
                     required
                   />
+                  <p class="cart-error" id="cart-country-error">
+                    Invalid Country
+                  </p>
                 </div>
               </div>
               <div class="payment-location">
@@ -133,6 +143,7 @@
                     placeholder="Your City"
                     required
                   />
+                  <p class="cart-error" id="cart-city-error">Invalid City</p>
                 </div>
                 <div>
                   <label for="postal">Postal Code</label>
@@ -144,6 +155,7 @@
                     placeholder="Postal Code"
                     required
                   />
+                  <p class="cart-error" id="cart-postal-error">Invalid Code</p>
                 </div>
               </div>
               <label for="card-number">Card Number</label>
@@ -155,6 +167,7 @@
                 placeholder="Card Number"
                 required
               />
+              <p class="cart-error" id="cart-card-error">Invalid Card Number</p>
               <div class="payment-location">
                 <div>
                   <label for="month">Month</label>
@@ -163,9 +176,10 @@
                     name="Month"
                     id="month"
                     class="payment-location-input"
-                    placeholder="Month"
+                    placeholder="MM"
                     required
                   />
+                  <p class="cart-error" id="cart-month-error">Invalid</p>
                 </div>
                 <div>
                   <label for="year">Year</label>
@@ -174,9 +188,10 @@
                     name="Year"
                     id="year"
                     class="payment-location-input"
-                    placeholder="Year"
+                    placeholder="YYYY"
                     required
                   />
+                  <p class="cart-error" id="cart-year-error">Invalid</p>
                 </div>
                 <div>
                   <label for="cvv">CVV</label>
@@ -188,6 +203,7 @@
                     placeholder="CVV"
                     required
                   />
+                  <p class="cart-error" id="cart-cvv-error">Invalid</p>
                 </div>
               </div>
               <button class="contact-submit-button">Checkout</button>
