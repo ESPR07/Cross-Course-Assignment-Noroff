@@ -6,7 +6,7 @@ const fetchID = document.location.search;
 const param = new URLSearchParams(fetchID);
 const ID = param.get("id");
 
-const product = productList.find(product => product.id === ID);
+const product = productList.find((product) => product.id === ID);
 
 pageTitle.innerText = product.name;
 
@@ -39,9 +39,31 @@ const price = document.createElement("h2");
 price.innerText = "kr " + product.price;
 buttonWrap.appendChild(price);
 
-const buyButton = document.createElement("a");
-buyButton.href = "/cart.html";
+const buyButton = document.createElement("button");
 buyButton.title = "Buy the product";
 buyButton.classList.add("product-page-buy-button");
-buyButton.innerText = "Buy Now"
+buyButton.innerText = "Buy Now";
+buyButton.onclick = () => addToCart(ID.toString(), product.price);
 buttonWrap.appendChild(buyButton);
+
+function addToCart(id, price) {
+  if (localStorage.getItem("cart")) {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    const totalPrice = Number(cart.totalPrice) + product.price;
+    cart.totalPrice = totalPrice;
+    const itemCount = Number(cart.itemCount) + 1;
+    cart.itemCount = itemCount;
+    const productAmount = Number(cart.cartItems[id] ?? 0) + 1;
+    cart.cartItems[id] = productAmount;
+    console.log(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    const cartObject = {
+      totalPrice: price,
+      itemCount: 1,
+      cartItems: {},
+    };
+    cartObject.cartItems[id] = 1;
+    localStorage.setItem("cart", JSON.stringify(cartObject));
+  }
+}

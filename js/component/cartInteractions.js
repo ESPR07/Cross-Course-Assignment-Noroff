@@ -7,7 +7,7 @@ const cart = JSON.parse(localStorage.getItem("cart"));
 var totalPrice = cart.totalPrice;
 
 try {
-  if (!cart || cart.length === 0) {
+  if (!cart || cart.totalPrice === 0) {
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
   } else {
     productList.forEach(({ id, description, name, color, price, image }) => {
@@ -44,7 +44,7 @@ try {
 
           const productAmount = document.createElement("p");
           productAmount.classList.add("cart-product-amount");
-          productAmount.innerText = "amount: " + cart.cartItems[id];
+          productAmount.innerText = "Qty: " + cart.cartItems[id];
           infoContainer.appendChild(productAmount);
 
           const productPrice = document.createElement("p");
