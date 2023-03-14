@@ -30,13 +30,13 @@ function validationEvent(event) {
     emailError.style.display = "block";
   }
 
-  if (validator(subjectValue.value, 5)) {
+  if (validator(subjectValue.value, 0)) {
     subjectError.style.display = "none";
   } else {
     subjectError.style.display = "block";
   }
 
-  if (validator(messageValue.value, 15)) {
+  if (validator(messageValue.value, 0)) {
     messageError.style.display = "none";
   } else {
     messageError.style.display = "block";

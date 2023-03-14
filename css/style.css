@@ -192,6 +192,19 @@ form .search-icon {
   width: 45px;
 }
 
+.cart-counter {
+  background-color: var(--textColor);
+  color: var(--adBannerText);
+  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  top: 8px;
+  right: 45px;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+}
+
 ul {
   display: none;
 }
@@ -253,6 +266,9 @@ ul {
 
 #home-shop-now-head {
   font-size: 3.5rem;
+  font-family: "manrope", "Courier New", Courier, monospace;
+  font-weight: 900;
+  letter-spacing: 5px;
   margin: 0;
 }
 
@@ -779,6 +795,10 @@ ul {
 
   form {
     width: 50%;
+  }
+
+  .cart-counter {
+    display: none;
   }
 
   /* m1.2 Mobile Footer Styling*/

@@ -8,6 +8,7 @@
     <link href=".//css/style.css" rel="stylesheet" />
     <script type="module" defer src="/js/browsePage.js"></script>
     <script defer src="/js/component/searchBar.js"></script>
+    <script defer src="/js/component/cartCounter.js"></script>
     <title>Rainy Days | Collection</title>
   </head>
   <body>
@@ -35,7 +36,13 @@
             >Collection</a
           >
           <form onsubmit="" class="search-form">
-            <input type="text" placeholder="Search" name="search" id="search-bar" class="nav-search" />
+            <input
+              type="text"
+              placeholder="Search"
+              name="search"
+              id="search-bar"
+              class="nav-search"
+            />
             <button type="submit" class="search-icon">
               <img src="/images/search-icon.png" alt="Search Icon" />
             </button>
@@ -58,8 +65,9 @@
             class="nav-cart"
             title="See what's currently in your cart"
           >
-            <img src="/images/cart-icon.jpg" alt="Cart Icon"
-          /></a>
+            <img src="/images/cart-icon.jpg" alt="Cart Icon" />
+            <p class="cart-counter">1</p>
+          </a>
         </section>
       </nav>
     </header>
@@ -69,8 +77,7 @@
           <p>PUSHING THE</p>
           <p>COMFORT ZONE</p>
         </div>
-        <div class="browse-container">
-        </div>
+        <div class="browse-container"></div>
       </section>
     </main>
     <footer>
