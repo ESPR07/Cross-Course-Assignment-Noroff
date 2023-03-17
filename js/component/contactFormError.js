@@ -49,8 +49,8 @@ function contactValidationEvent(event) {
 
   if (
     emailCheck(emailValue.value) &&
-    letterValidator(subjectValue.value, 5) &&
-    letterValidator(messageValue.value, 15) === true
+    letterValidator(subjectValue.value, 0) &&
+    letterValidator(messageValue.value, 0) === true
   ) {
     location.href = "/contact-submit-success.html";
   }
