@@ -1,4 +1,5 @@
 import { productList } from "./productList.js";
+import { addToCart } from "./component/cartInteractions.js";
 const browseContainer = document.querySelector(".browse-container");
 const searchParams = new URLSearchParams(window.location.search);
 const searchValue = searchParams.get("search");
@@ -13,7 +14,7 @@ if (searchValue != "" && searchValue != null) {
   );
 }
 productListFiltered.forEach(({ id, name, color, price, image }) => {
-  function createHTML() {
+  function createProductCards() {
     let productBox = document.createElement("div");
     productBox.classList.add("browse-product-box");
     browseContainer.appendChild(productBox);
@@ -51,28 +52,5 @@ productListFiltered.forEach(({ id, name, color, price, image }) => {
     cartIcon.onclick = () => addToCart(id.toString(), price);
     productBox.appendChild(cartIcon);
   }
-  createHTML();
+  createProductCards();
 });
-
-function addToCart(id, price) {
-  if (localStorage.getItem("cart")) {
-    const cart = JSON.parse(localStorage.getItem("cart"));
-    const totalPrice = Number(cart.totalPrice) + price;
-    cart.totalPrice = totalPrice;
-    const itemCount = Number(cart.itemCount) + 1;
-    cart.itemCount = itemCount;
-    const productAmount = Number(cart.cartItems[id] ?? 0) + 1;
-    cart.cartItems[id] = productAmount;
-    console.log(cart);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  } else {
-    const cartObject = {
-      totalPrice: price,
-      itemCount: 1,
-      cartItems: {},
-    };
-    cartObject.cartItems[id] = 1;
-    localStorage.setItem("cart", JSON.stringify(cartObject));
-  }
-  window.location.reload();
-}
