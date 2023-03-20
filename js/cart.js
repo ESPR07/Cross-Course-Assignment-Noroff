@@ -5,12 +5,13 @@ const priceContainer = document.querySelector("#cart-price");
 const totalPriceContainer = document.querySelector("#total-price");
 
 const cart = JSON.parse(localStorage.getItem("cart"));
-var totalPrice = cart.totalPrice;
 
 try {
-  if (!cart || cart.totalPrice === 0) {
+  if (!cart || cart.totalPrice === 0 || cart === null) {
+    var totalPrice = 0;
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
   } else {
+    totalPrice = cart.totalPrice;
     productList.forEach(({ id, description, name, color, price, image }) => {
       if (cart.cartItems[id] > 0) {
         function createProductCards() {
