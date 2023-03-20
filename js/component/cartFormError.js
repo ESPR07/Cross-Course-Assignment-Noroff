@@ -106,6 +106,7 @@ function cartValidationEvent(event) {
     validator(yearValue.value, 0) &&
     validator(cvvValue.value, 0) === true
   ) {
+    localStorage.removeItem("cart");
     location.href = "/purchase-success.html";
   }
 }
