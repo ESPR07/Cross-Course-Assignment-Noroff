@@ -1,4 +1,5 @@
 import { productList } from "./productList.js";
+import { addToCart } from "./component/cartInteractions.js";
 const container = document.querySelector(".product-wrapper");
 const pageTitle = document.querySelector("title");
 
@@ -45,26 +46,3 @@ buyButton.classList.add("product-page-buy-button");
 buyButton.innerText = "Buy Now";
 buyButton.onclick = () => addToCart(ID.toString(), product.price);
 buttonWrap.appendChild(buyButton);
-
-function addToCart(id, price) {
-  if (localStorage.getItem("cart")) {
-    const cart = JSON.parse(localStorage.getItem("cart"));
-    const totalPrice = Number(cart.totalPrice) + product.price;
-    cart.totalPrice = totalPrice;
-    const itemCount = Number(cart.itemCount) + 1;
-    cart.itemCount = itemCount;
-    const productAmount = Number(cart.cartItems[id] ?? 0) + 1;
-    cart.cartItems[id] = productAmount;
-    console.log(cart);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  } else {
-    const cartObject = {
-      totalPrice: price,
-      itemCount: 1,
-      cartItems: {},
-    };
-    cartObject.cartItems[id] = 1;
-    localStorage.setItem("cart", JSON.stringify(cartObject));
-  }
-  window.location.reload();
-}

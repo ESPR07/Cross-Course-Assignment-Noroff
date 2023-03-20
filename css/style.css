@@ -808,6 +808,19 @@ ul {
     display: none;
   }
 
+  .cart-counter-mobile {
+    position: absolute;
+    bottom: 25px;
+    left: 60px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--textColor);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: 900;
+  }
+
   /* m1.2 Mobile Footer Styling*/
 
   .footer-icons {
