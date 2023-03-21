@@ -1,4 +1,6 @@
 const cart = JSON.parse(localStorage.getItem("cart"));
+const cartAddedMessage = document.querySelector(".cart-message");
+const cartAddedArrow = document.querySelector(".cart-message-arrow");
 
 // Function for adding items to the cart.
 export function addToCart(id, price) {
@@ -10,7 +12,6 @@ export function addToCart(id, price) {
     cart.itemCount = itemCount;
     const productAmount = Number(cart.cartItems[id] ?? 0) + 1;
     cart.cartItems[id] = productAmount;
-    console.log(cart);
     localStorage.setItem("cart", JSON.stringify(cart));
   } else {
     const cartObject = {
@@ -21,7 +22,17 @@ export function addToCart(id, price) {
     cartObject.cartItems[id] = 1;
     localStorage.setItem("cart", JSON.stringify(cartObject));
   }
-  window.location.reload();
+  cartAddedMessage.style.opacity = 1;
+  cartAddedArrow.style.opacity = 1;
+
+  setTimeout(() => {
+    cartAddedMessage.style.opacity = 0;
+    cartAddedArrow.style.opacity = 0;
+  }, "1500");
+
+  setTimeout(() => {
+    window.location.reload();
+  }, "1500");
 }
 
 // Function for removing items in the cart.
