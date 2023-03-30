@@ -4,6 +4,7 @@ import { removeItem } from "./component/cartInteractions.js";
 const productContainer = document.querySelector(".product-container");
 const priceContainer = document.querySelector("#cart-price");
 const totalPriceContainer = document.querySelector("#total-price");
+var totalPrice = 0;
 
 const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -12,12 +13,11 @@ async function getProducts() {
   const products = await response.json();
 
   createProduct(products);
-  createTotalPriceHTML(products);
+  createTotalPriceHTML();
 }
 
 function createProduct(products) {
   if (!cart || cart.totalPrice === 0 || cart === null) {
-    var totalPrice = 0;
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
   } else {
     totalPrice = cart.totalPrice;
@@ -71,7 +71,8 @@ function createProduct(products) {
 
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("delete-button");
-            deleteButton.onclick = () => removeItem(id.toString(), price);
+            deleteButton.onclick = () =>
+              removeItem(id.toString(), formattedPrice);
             cartProduct.appendChild(deleteButton);
           }
 
@@ -82,8 +83,8 @@ function createProduct(products) {
   }
 }
 
-function createTotalPriceHTML(products) {
-  function totalPriceHTML(products) {
+function createTotalPriceHTML() {
+  function totalPriceHTML() {
     const priceTitle = document.createElement("p");
     priceTitle.innerText = "Subtotal";
     priceContainer.appendChild(priceTitle);
