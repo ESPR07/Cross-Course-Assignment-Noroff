@@ -9,9 +9,13 @@ const productListURL =
 async function getProducts() {
   const response = await fetch(productListURL);
   const result = await response.json();
-
   let productListFiltered = result;
 
+  searchFilter(productListFiltered);
+  createHTML(productListFiltered);
+}
+
+function searchFilter(productListFiltered) {
   if (searchValue != "" && searchValue != null) {
     productListFiltered = result.filter(
       (product) =>
@@ -22,7 +26,9 @@ async function getProducts() {
           .includes(searchValue.toLowerCase())
     );
   }
+}
 
+function createHTML(productListFiltered) {
   productListFiltered.forEach(({ id, name, images, attributes, prices }) => {
     const image = images[0].src;
     const price = Number(prices.price);

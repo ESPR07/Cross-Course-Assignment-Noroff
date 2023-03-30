@@ -11,6 +11,11 @@ async function getProducts() {
   const response = await fetch(productListURL);
   const products = await response.json();
 
+  createProduct(products);
+  createTotalPriceHTML(products);
+}
+
+function createProduct(products) {
   if (!cart || cart.totalPrice === 0 || cart === null) {
     var totalPrice = 0;
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
@@ -75,8 +80,10 @@ async function getProducts() {
       }
     );
   }
+}
 
-  function createTotalPriceHTML() {
+function createTotalPriceHTML(products) {
+  function totalPriceHTML(products) {
     const priceTitle = document.createElement("p");
     priceTitle.innerText = "Subtotal";
     priceContainer.appendChild(priceTitle);
@@ -96,7 +103,7 @@ async function getProducts() {
     totalPriceContainer.appendChild(totalPriceValue);
   }
 
-  createTotalPriceHTML();
+  totalPriceHTML();
 }
 
 getProducts();
