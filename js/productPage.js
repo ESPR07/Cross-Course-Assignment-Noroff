@@ -1,5 +1,6 @@
 import { addToCart } from "./component/cartInteractions.js";
 const container = document.querySelector(".product-wrapper");
+const loader = document.querySelector("#loading");
 const pageTitle = document.querySelector("title");
 
 const fetchID = document.location.search;
@@ -12,6 +13,8 @@ const productListURL =
 async function getProduct() {
   const response = await fetch(productListURL);
   const product = await response.json();
+
+  loader.style.display = "none";
 
   pageTitle.innerText = product.name;
 
