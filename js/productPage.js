@@ -8,7 +8,7 @@ const param = new URLSearchParams(fetchID);
 const ID = param.get("id");
 
 const productListURL =
-  "https://sindrederaas.no/wordpress/wp-json/wc/store/products/" + ID;
+  "https://sindrederaas.no/wordpress/wp-json/wc/v3/products/" + ID + "/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
 
 async function getProduct() {
   const response = await fetch(productListURL);
@@ -44,9 +44,7 @@ async function getProduct() {
   contentContainer.appendChild(buttonWrap);
 
   const price = document.createElement("h2");
-  const convertPrice = Number(product.prices.price);
-  const formattedPrice = (convertPrice / 100).toFixed(2);
-  price.innerText = "kr " + formattedPrice;
+  price.innerText = "kr " + product.price;
   buttonWrap.appendChild(price);
 
   const buyButton = document.createElement("button");
