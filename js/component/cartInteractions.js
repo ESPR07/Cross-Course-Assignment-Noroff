@@ -6,7 +6,7 @@ const cartAddedArrow = document.querySelector(".cart-message-arrow");
 export function addToCart(id, price) {
   if (localStorage.getItem("cart")) {
     const cart = JSON.parse(localStorage.getItem("cart"));
-    const totalPrice = Number(cart.totalPrice) + price;
+    const totalPrice = Number(cart.totalPrice) + Number(price);
     cart.totalPrice = totalPrice;
     const itemCount = Number(cart.itemCount) + 1;
     cart.itemCount = itemCount;
@@ -37,7 +37,7 @@ export function addToCart(id, price) {
 
 // Function for removing items in the cart.
 export function removeItem(id, price) {
-  const totalPrice = Number(cart.totalPrice) - price;
+  const totalPrice = Number(cart.totalPrice) - Number(price);
   cart.totalPrice = totalPrice;
   const itemCount = Number(cart.itemCount) - 1;
   cart.itemCount = itemCount;

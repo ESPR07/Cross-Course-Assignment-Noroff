@@ -1,10 +1,11 @@
 const productListURL =
-  "https://sindrederaas.no/wordpress/wp-json/wc/store/products";
+  "https://sindrederaas.no/wordpress/wp-json/wc/v3/products/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
 import { removeItem } from "./component/cartInteractions.js";
 const productContainer = document.querySelector(".product-container");
 const priceContainer = document.querySelector("#cart-price");
 const totalPriceContainer = document.querySelector("#total-price");
-var totalPrice = 0;
+var totalPrice = 0
+
 
 const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -13,7 +14,7 @@ async function getProducts() {
   const products = await response.json();
 
   createProduct(products);
-  createTotalPriceHTML();
+  totalPriceHTML();
 }
 
 function createProduct(products) {
@@ -22,7 +23,7 @@ function createProduct(products) {
   } else {
     totalPrice = cart.totalPrice;
     products.forEach(
-      ({ id, description, name, attributes, prices, images }) => {
+      ({ id, description, name, attributes, price, images }) => {
         if (cart.cartItems[id] > 0) {
           function createProductCards() {
             const cartProduct = document.createElement("div");
@@ -46,7 +47,7 @@ function createProduct(products) {
 
             const productColor = document.createElement("h3");
             productColor.classList.add("cart-product-color");
-            productColor.innerText = attributes[0].terms[0].name;
+            productColor.innerText = attributes[0].options[0];
             infoContainer.appendChild(productColor);
 
             const productDescription = document.createElement("p");
@@ -63,16 +64,14 @@ function createProduct(products) {
             infoContainer.appendChild(productAmount);
 
             const productPrice = document.createElement("p");
-            const convertPrice = Number(prices.price);
-            const formattedPrice = (convertPrice / 100).toFixed(2);
             productPrice.classList.add("cart-product-price");
-            productPrice.innerText = "kr " + formattedPrice;
+            productPrice.innerText = "kr " + price;
             infoContainer.appendChild(productPrice);
 
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("delete-button");
             deleteButton.onclick = () =>
-              removeItem(id.toString(), formattedPrice);
+              removeItem(id.toString(), price);
             cartProduct.appendChild(deleteButton);
           }
 
@@ -83,28 +82,25 @@ function createProduct(products) {
   }
 }
 
-function createTotalPriceHTML() {
-  function totalPriceHTML() {
-    const priceTitle = document.createElement("p");
-    priceTitle.innerText = "Subtotal";
-    priceContainer.appendChild(priceTitle);
 
-    const priceValue = document.createElement("p");
-    priceValue.innerText = "kr " + totalPrice;
-    priceContainer.appendChild(priceValue);
+function totalPriceHTML() {
+  const priceTitle = document.createElement("p");
+  priceTitle.innerText = "Subtotal";
+  priceContainer.appendChild(priceTitle);
 
-    const totalPriceTitle = document.createElement("p");
-    totalPriceTitle.classList.add("cart-form-total");
-    totalPriceTitle.innerText = "Total";
-    totalPriceContainer.appendChild(totalPriceTitle);
+  const priceValue = document.createElement("p");
+  priceValue.innerText = "kr " + totalPrice;
+  priceContainer.appendChild(priceValue);
 
-    const totalPriceValue = document.createElement("p");
-    totalPriceValue.classList.add("cart-form-total");
-    totalPriceValue.innerText = "kr " + totalPrice;
-    totalPriceContainer.appendChild(totalPriceValue);
-  }
+  const totalPriceTitle = document.createElement("p");
+  totalPriceTitle.classList.add("cart-form-total");
+  totalPriceTitle.innerText = "Total";
+  totalPriceContainer.appendChild(totalPriceTitle);
 
-  totalPriceHTML();
-}
+  const totalPriceValue = document.createElement("p");
+  totalPriceValue.classList.add("cart-form-total");
+  totalPriceValue.innerText = "kr " + totalPrice;
+  totalPriceContainer.appendChild(totalPriceValue);
+ }
 
 getProducts();
