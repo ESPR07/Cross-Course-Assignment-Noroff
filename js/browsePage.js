@@ -1,7 +1,5 @@
-// import { productList } from "./productList.js";
 import { addToCart } from "./component/cartInteractions.js";
 const browseContainer = document.querySelector(".browse-container");
-const laodingText = document.querySelector(".loading-text");
 const loader = document.querySelector("#loading");
 const searchParams = new URLSearchParams(window.location.search);
 const searchValue = searchParams.get("search");
@@ -11,26 +9,26 @@ const productListURL =
 async function getProducts() {
   const response = await fetch(productListURL);
   const result = await response.json();
-  let productListFiltered = result;
 
   loader.style.display = "none";
   browseContainer.style.display = "grid";
 
-  searchFilter(productListFiltered);
-  createHTML(productListFiltered);
+  const searchResult = searchFilter(searchValue, result);
+  createHTML(searchResult);
 }
 
-function searchFilter(productListFiltered) {
+function searchFilter(searchValue, result) {
   if (searchValue != "" && searchValue != null) {
-    productListFiltered = result.filter(
+    return result.filter(
       (product) =>
         product.name.toLowerCase().includes(searchValue.toLowerCase()) ||
         product.description.toLowerCase().includes(searchValue.toLowerCase()) ||
-        product.attributes[0].terms[0].name
+        product.attributes[0].options[0]
           .toLowerCase()
           .includes(searchValue.toLowerCase())
     );
   }
+  return result;
 }
 
 function createHTML(productListFiltered) {

@@ -6,7 +6,6 @@ const cartAddedArrow = document.querySelector(".cart-message-arrow");
 export function addToCart(id, price) {
   if (localStorage.getItem("cart")) {
     const cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart.totalPrice);
     const totalPrice = Number(cart.totalPrice) + Number(price);
     cart.totalPrice = totalPrice;
     const itemCount = Number(cart.itemCount) + 1;
