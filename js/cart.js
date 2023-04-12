@@ -1,5 +1,8 @@
-const productListURL =
-  "https://sindrederaas.no/wordpress/wp-json/wc/v3/products/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
+const productListBaseURL = "https://sindrederaas.no/";
+const productListPath = "wordpress/wp-json/wc/v3/products/";
+const productListKeys = "?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
+const APIURL = productListBaseURL + productListPath + productListKeys;
+
 import { removeItem } from "./component/cartInteractions.js";
 const productContainer = document.querySelector(".product-container");
 const priceContainer = document.querySelector("#cart-price");
@@ -10,14 +13,26 @@ var totalPrice = 0
 const cart = JSON.parse(localStorage.getItem("cart"));
 
 async function getProducts() {
-  const response = await fetch(productListURL);
-  const products = await response.json();
+  try {
 
-  createProduct(products);
-  totalPriceHTML();
+    const response = await fetch(APIURL);
+    const products = await response.json();
+  
+    return products;
+
+  } catch (error) {
+
+    console.log(error);
+    const errorHTML = document.createElement("h1");
+    errorHTML.classList.add("error-message");
+    errorHTML.innerText = "Oops, something went wrong!"
+    productContainer.append(errorHTML);
+
+  }
+
 }
 
-function createProduct(products) {
+function createProductsHTML(products) {
   if (!cart || cart.totalPrice === 0 || cart === null) {
     productContainer.innerHTML = `<p class="empty-cart">Your cart is empty</>`;
   } else {
@@ -103,4 +118,11 @@ function totalPriceHTML() {
   totalPriceContainer.appendChild(totalPriceValue);
  }
 
-getProducts();
+async function createPage() {
+  const fetchProducts = await getProducts();
+
+  createProductsHTML(fetchProducts);
+  totalPriceHTML();
+}
+
+createPage();

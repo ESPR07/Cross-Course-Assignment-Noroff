@@ -7,17 +7,31 @@ const fetchID = document.location.search;
 const param = new URLSearchParams(fetchID);
 const ID = param.get("id");
 
-const productListURL =
-  "https://sindrederaas.no/wordpress/wp-json/wc/v3/products/" + ID + "/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
+const productListBaseURL = "https://sindrederaas.no/";
+const productListPath = "wordpress/wp-json/wc/v3/products/";
+const productListKeys = "/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959"
+const APIURL = productListBaseURL + productListPath + ID + productListKeys;
 
 async function getProduct() {
-  const response = await fetch(productListURL);
-  const product = await response.json();
+  try {
 
-  loader.style.display = "none";
+    const response = await fetch(APIURL);
+    const product = await response.json();
+    return product;
+  
+  } catch (error) {
 
-  pageTitle.innerText = product.name;
+    console.log(error);
+    const errorHTML = document.createElement("h1");
+    errorHTML.classList.add("error-message");
+    errorHTML.innerText = "Oops, something went wrong!"
+    container.append(errorHTML);
+  
+  }
 
+}
+
+function createHTML(product) {
   const imageContainer = document.createElement("div");
   imageContainer.classList.add("product-page-image-container");
   container.appendChild(imageContainer);
@@ -55,4 +69,14 @@ async function getProduct() {
   buttonWrap.appendChild(buyButton);
 }
 
-getProduct();
+async function createPage() {
+const apiFetch = await getProduct();
+
+loader.style.display = "none";
+
+pageTitle.innerText = apiFetch.name;
+
+createHTML(apiFetch);
+}
+
+createPage();
