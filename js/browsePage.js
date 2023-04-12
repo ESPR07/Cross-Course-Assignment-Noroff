@@ -1,20 +1,31 @@
+// Global elements used in the code.
 import { addToCart } from "./component/cartInteractions.js";
 const browseContainer = document.querySelector(".browse-container");
 const loader = document.querySelector("#loading");
 const searchParams = new URLSearchParams(window.location.search);
 const searchValue = searchParams.get("search");
-const productListURL =
-  "https://sindrederaas.no/wordpress/wp-json/wc/v3/products/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959";
+
+// The URL for the API in sections.
+const productListBaseURL = "https://sindrederaas.no/";
+const productListPath = "wordpress/wp-json/wc/v3/products/"
+const productListKeys = "?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959"
+
+const APIURL = productListBaseURL + productListPath + productListKeys
 
 async function getProducts() {
-  const response = await fetch(productListURL);
-  const result = await response.json();
+  try {
+    const response = await fetch(APIURL);
+    const result = await response.json();
+  
+    return result;
+  } catch (error) {
+    console.log(error);
+    const errorHTML = document.createElement("h1");
+    errorHTML.classList.add("error-message");
+    errorHTML.innerText = "Oops, something went wrong!"
+    browseContainer.append(errorHTML);
+  }
 
-  loader.style.display = "none";
-  browseContainer.style.display = "grid";
-
-  const searchResult = searchFilter(searchValue, result);
-  createHTML(searchResult);
 }
 
 function searchFilter(searchValue, result) {
@@ -78,4 +89,14 @@ function createHTML(productListFiltered) {
   });
 }
 
-getProducts();
+async function createBrowsePage() {
+const products = await getProducts()
+
+loader.style.display = "none";
+browseContainer.style.display = "grid";
+
+const searchResult = searchFilter(searchValue, products);
+createHTML(searchResult);
+}
+
+createBrowsePage();
