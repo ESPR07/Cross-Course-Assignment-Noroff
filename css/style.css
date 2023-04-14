@@ -490,10 +490,6 @@ ul {
   justify-content: center;
 }
 
-.product-page-image-container {
-  background-color: var(--productImage);
-}
-
 .product-text-container {
   border-top: 2px solid var(--textColor);
   border-bottom: 2px solid var(--textColor);
@@ -540,43 +536,43 @@ ul {
   cursor: pointer;
 }
 
-.featured-title {
+.featured-section {
   margin-inline: 15%;
+  margin-bottom: 20px;
 }
 
 .featured-container {
   background-color: var(--browseBackground);
   display: flex;
-  margin-inline: 15%;
-  margin-bottom: 20px;
 }
 
 .featured-product {
   background-color: white;
+  display: flex;
+  flex-direction: column;
   margin-right: 10px;
   box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  max-height: 300px;
 }
 
-.featured-product-image {
-  background-image: url("/images/RainyDays_Jacket1.webp");
-  background-color: var(--browseBackground);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 200px;
-  min-width: 200px;
+.featured-product img {
+  max-height: 200px;
+  background-color: var(--productImage);
 }
 
 .featured-header {
   font-size: 1.4rem;
   margin: 0px;
   margin-left: 5px;
+  color: var(--textColor);
 }
 
 .featured-price {
   font-size: 1.2rem;
   margin-left: 5px;
   margin-block: 10px;
+  color: var(--textColor);
 }
 
 /*=====================
@@ -1050,6 +1046,38 @@ ul {
   .product-page-buy-button {
     color: var(--buyNowInactive);
     background-color: var(--buyNowActive);
+  }
+
+  .featured-section {
+    margin-inline: 20px;
+    padding-bottom: 20%;
+  }
+
+  .featured-title {
+    text-align: center;
+  }
+
+  .featured-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured-product {
+    background-color: var(--browseBackground);
+    box-shadow: none;
+    border-top: 2px solid var(--textColor);
+    margin-right: 0px;
+    margin-bottom: 20px
+  }
+
+  .featured-product img {
+    background-color: var(--browseBackground);
+    padding-top: 10px;
+  }
+
+  .featured-product:last-child {
+    border-bottom: 2px solid var(--textColor);
+    padding-bottom: 20px;
   }
 
   /*==========================
