@@ -326,11 +326,10 @@ ul {
 .browse-background {
   background-color: var(--browseBackground);
   padding-top: 120px;
-  position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
 }
+
 
 /*4.2 Styling for the ad banner on top of the page*/
 
@@ -487,7 +486,6 @@ ul {
 
 .product-wrapper {
   margin-inline: 15%;
-  margin-bottom: 10%;
   display: flex;
   justify-content: center;
 }
@@ -540,6 +538,45 @@ ul {
   color: var(--buyNowActive);
   background-color: var(--buyNowInactive);
   cursor: pointer;
+}
+
+.featured-title {
+  margin-inline: 15%;
+}
+
+.featured-container {
+  background-color: var(--browseBackground);
+  display: flex;
+  margin-inline: 15%;
+  margin-bottom: 20px;
+}
+
+.featured-product {
+  background-color: white;
+  margin-right: 10px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.featured-product-image {
+  background-image: url("/images/RainyDays_Jacket1.webp");
+  background-color: var(--browseBackground);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.featured-header {
+  font-size: 1.4rem;
+  margin: 0px;
+  margin-left: 5px;
+}
+
+.featured-price {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  margin-block: 10px;
 }
 
 /*=====================
