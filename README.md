@@ -1,5 +1,5 @@
-# School Project Test Interaction Design
-Taken the page from the HTML/CSS course assignment and added all functionality and changes needed based on feedback from users.
+# School Project CMS Course Assignmet
+This is the stage it's in after implementing all changes needed to fetch data from a content management system.
 
 ## The deployed site for this repository:
 https://rainydays-test-espr.netlify.app/
