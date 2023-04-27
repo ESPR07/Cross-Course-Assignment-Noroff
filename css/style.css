@@ -326,10 +326,11 @@ ul {
 .browse-background {
   background-color: var(--browseBackground);
   padding-top: 120px;
+  position: relative;
   width: 100%;
   height: 100%;
+  text-align: center;
 }
-
 
 /*4.2 Styling for the ad banner on top of the page*/
 
