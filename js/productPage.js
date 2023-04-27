@@ -11,12 +11,13 @@ const ID = param.get("id");
 const productListBaseURL = "https://sindrederaas.no/";
 const productListPath = "wordpress/wp-json/wc/v3/products/";
 const productListKeys = "/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959"
+const singleAPIURL = productListBaseURL + productListPath + ID + productListKeys;
 const APIURL = productListBaseURL + productListPath + productListKeys;
 
-async function getProduct() {
+async function getSingleProduct() {
   try {
 
-    const response = await fetch(APIURL);
+    const response = await fetch(singleAPIURL);
     const product = await response.json();
     return product;
   
@@ -32,49 +33,65 @@ async function getProduct() {
 
 }
 
-function createHTML(product) {
-  product.forEach(({id, name, images, description, price}) => {
-    if(id === Number(ID)){
-      pageTitle.innerText = name
+async function getFeaturedProducts() {
+  try {
 
-      const imageContainer = document.createElement("div");
-      imageContainer.classList.add("product-page-image-container");
-      container.appendChild(imageContainer);
+    const response = await fetch(APIURL);
+    const products = await response.json();
+    return products;
+  
+  } catch (error) {
+
+    console.log(error);
+    const errorHTML = document.createElement("h1");
+    errorHTML.classList.add("error-message");
+    errorHTML.innerText = "Oops, something went wrong!"
+    container.append(errorHTML);
+  
+  }
+
+}
+
+function createHTML(product) {
+
+  pageTitle.innerText = product.name
+
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("product-page-image-container");
+  container.appendChild(imageContainer);
     
-      const image = document.createElement("img");
-      image.src = images[0].src;
-      image.alt = name;
-      imageContainer.appendChild(image);
+  const image = document.createElement("img");
+  image.src = product.images[0].src;
+  image.alt = product.name;
+  imageContainer.appendChild(image);
     
-      const contentContainer = document.createElement("section");
-      contentContainer.classList.add("product-text-container");
-      container.appendChild(contentContainer);
+  const contentContainer = document.createElement("section");
+  contentContainer.classList.add("product-text-container");
+  container.appendChild(contentContainer);
     
-      const header = document.createElement("h1");
-      header.innerText = name;
-      contentContainer.appendChild(header);
+  const header = document.createElement("h1");
+  header.innerText = product.name;
+  contentContainer.appendChild(header);
     
-      const content = document.createElement("p");
-      content.innerText = description.replace(/<\/?[^>]+(>|$)/g, "");
-      contentContainer.appendChild(content);
+  const content = document.createElement("p");
+  content.innerText = product.description.replace(/<\/?[^>]+(>|$)/g, "");
+  contentContainer.appendChild(content);
     
-      const buttonWrap = document.createElement("div");
-      buttonWrap.classList.add("price-button-wrap");
-      contentContainer.appendChild(buttonWrap);
+  const buttonWrap = document.createElement("div");
+  buttonWrap.classList.add("price-button-wrap");
+  contentContainer.appendChild(buttonWrap);
     
-      const productPrice = document.createElement("h2");
-      productPrice.innerText = "kr " + price;
-      buttonWrap.appendChild(productPrice);
+  const productPrice = document.createElement("h2");
+  productPrice.innerText = "kr " + product.price;
+  buttonWrap.appendChild(productPrice);
     
-      const buyButton = document.createElement("button");
-      buyButton.title = "Buy the product";
-      buyButton.classList.add("product-page-buy-button");
-      buyButton.innerText = "Buy Now";
-      buyButton.onclick = () => addToCart(ID.toString(), price);
-      buttonWrap.appendChild(buyButton);
-    }
-  })
-  };
+  const buyButton = document.createElement("button");
+  buyButton.title = "Buy the product";
+  buyButton.classList.add("product-page-buy-button");
+  buyButton.innerText = "Buy Now";
+  buyButton.onclick = () => addToCart(ID.toString(), product.price);
+  buttonWrap.appendChild(buyButton);
+}
 
 function createFeatured(products){
   const featuredTitle = document.createElement("h1");
@@ -116,11 +133,12 @@ function createFeatured(products){
 
 
 async function createPage() {
-const apiFetch = await getProduct();
+const apiFetch = await getFeaturedProducts();
+const singleAPIFetch = await getSingleProduct();
 
 loader.style.display = "none";
 
-createHTML(apiFetch);
+createHTML(singleAPIFetch);
 createFeatured(apiFetch);
 }
 
