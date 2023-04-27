@@ -12,7 +12,7 @@ const productListBaseURL = "https://sindrederaas.no/";
 const productListPath = "wordpress/wp-json/wc/v3/products/";
 const productListKeys = "/?consumer_key=ck_4d7972ed5d4ca2cdfe859b5e29b6fa1e81cc1f03&consumer_secret=cs_4ca32af479559814cc8057f9059968429c4dd959"
 const singleAPIURL = productListBaseURL + productListPath + ID + productListKeys;
-const APIURL = productListBaseURL + productListPath + productListKeys;
+const featuredAPIURL = productListBaseURL + productListPath + productListKeys + "&featured=true";
 
 async function getSingleProduct() {
   try {
@@ -36,7 +36,7 @@ async function getSingleProduct() {
 async function getFeaturedProducts() {
   try {
 
-    const response = await fetch(APIURL);
+    const response = await fetch(featuredAPIURL);
     const products = await response.json();
     return products;
   
@@ -103,10 +103,10 @@ function createFeatured(products){
       featuredWrapper.classList.add("featured-container");
       featuredContainer.append(featuredWrapper);
 
-  products.forEach(({id, featured, name, price, images}) => {
+  products.forEach(({id, name, price, images}) => {
     const image = images[0].src;
 
-    if(featured === true && id != Number(ID)) {
+    if(id != Number(ID)) {
 
       const featuredProduct = document.createElement("a");
       featuredProduct.classList.add("featured-product");
