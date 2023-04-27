@@ -3,3 +3,6 @@ Taken the page from the HTML/CSS course assignment and added all functionality a
 
 ## The deployed site for this repository:
 https://rainydays-test-espr.netlify.app/
+
+## A Hosted version of the page on my own domain:
+https://rainydays.sindrederaas.no/
