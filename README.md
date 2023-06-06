@@ -31,17 +31,17 @@ Assignment's key points:
 
 ### Installing
 
-1. Clone the repo:
+You can either:
+
+1. Clone the repo and run Liveserver:
 
 ```bash
 git clone git@github.com:ESPR07/cross-course-assignment-noroff.git
 ```
 
-2. Install the dependencies:
+2. Open the live site:
 
-```
-npm install
-```
+https://rainydays-test-espr.netlify.app/
 
 ### Deployed Sites
 
